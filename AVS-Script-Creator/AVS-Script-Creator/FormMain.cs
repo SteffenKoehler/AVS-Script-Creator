@@ -38,32 +38,6 @@ namespace AVS_Script_Creator
             formSettings.TopMost = true;
         }
 
-        private void ListViewOwnder()
-        {
-            listViewQueue.View = View.Details;
-            listViewQueue.GridLines = true;
-            listViewQueue.FullRowSelect = true;
-
-            listViewQueue.Columns.Add("File", 100);
-            listViewQueue.Columns.Add("File", 100);
-            listViewQueue.Columns.Add("File", 100);
-
-            //Add items in the listview
-            string[] arr = new string[4];
-            ListViewItem itm;
-
-            //Add first item
-            arr[0] = "product_1";
-            arr[1] = "100";
-            arr[2] = "10";
-            itm = new ListViewItem(arr);
-            listViewQueue.Items.Add(itm);
-
-
-            listViewQueue.OwnerDraw = true;
-
-        }
-
         private void initResizeComboBox()
         {
             comboBoxResize.DropDownStyle = ComboBoxStyle.DropDownList;
@@ -184,5 +158,41 @@ namespace AVS_Script_Creator
             numericUpDownTrimEnd.Value = Convert.ToDecimal(windowsMediaPlayer.Ctlcontrols.currentPosition) * frameRate;
         }
 
+        private void buttonAddToQueue_Click(object sender, EventArgs e)
+        {
+            string strTrim = "No";
+            string strResize = "No";
+            string strFade = "No";
+            string strOutput = Properties.Settings.Default.AVSOutput;
+
+            if (checkBoxTrim.Checked)
+            {
+                strTrim = numericUpDownTrimStart.Value.ToString() + ", " + numericUpDownTrimEnd.Value.ToString();
+            }
+
+            if (checkBoxResize.Checked)
+            {
+                strResize = comboBoxResize.Text;
+            }
+
+            if (checkBoxFadeIn.Checked)
+            {
+                strFade = "FadeIn";
+            } else if (checkBoxFadeOut.Checked)
+            {
+                strFade = "FadeOut";
+            } else if (checkBoxFadeInOut.Checked)
+            {
+                strFade = "FadeInOut";
+            }
+
+            ListViewItem lvi = new ListViewItem(textBoxVideo.Text);
+            lvi.SubItems.Add(strTrim);
+            lvi.SubItems.Add(strResize);
+            lvi.SubItems.Add(strFade);
+            lvi.SubItems.Add(strOutput);
+
+            listViewQueue.Items.Add(lvi);
+        }
     }
 }

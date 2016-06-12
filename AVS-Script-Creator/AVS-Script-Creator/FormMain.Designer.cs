@@ -47,16 +47,16 @@
             this.buttonTrimAddEndFrame = new System.Windows.Forms.Button();
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.buttonClear = new System.Windows.Forms.Button();
+            this.buttonAddToQueue = new System.Windows.Forms.Button();
+            this.checkBoxFadeInOut = new System.Windows.Forms.CheckBox();
+            this.labelFadeINOUT = new System.Windows.Forms.Label();
+            this.checkBoxFadeOut = new System.Windows.Forms.CheckBox();
+            this.labelFadeOUT = new System.Windows.Forms.Label();
+            this.checkBoxFadeIn = new System.Windows.Forms.CheckBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.listViewQueue = new System.Windows.Forms.ListView();
-            this.checkBoxFadeIN = new System.Windows.Forms.CheckBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.labelFadeOUT = new System.Windows.Forms.Label();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
-            this.labelFadeINOUT = new System.Windows.Forms.Label();
-            this.buttonAddToQueue = new System.Windows.Forms.Button();
-            this.buttonClear = new System.Windows.Forms.Button();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -230,11 +230,11 @@
             // 
             this.tabPage1.Controls.Add(this.buttonClear);
             this.tabPage1.Controls.Add(this.buttonAddToQueue);
-            this.tabPage1.Controls.Add(this.checkBox3);
+            this.tabPage1.Controls.Add(this.checkBoxFadeInOut);
             this.tabPage1.Controls.Add(this.labelFadeINOUT);
-            this.tabPage1.Controls.Add(this.checkBox2);
+            this.tabPage1.Controls.Add(this.checkBoxFadeOut);
             this.tabPage1.Controls.Add(this.labelFadeOUT);
-            this.tabPage1.Controls.Add(this.checkBoxFadeIN);
+            this.tabPage1.Controls.Add(this.checkBoxFadeIn);
             this.tabPage1.Controls.Add(this.label2);
             this.tabPage1.Controls.Add(this.buttonTrimAddEndFrame);
             this.tabPage1.Controls.Add(this.windowsMediaPlayer);
@@ -257,6 +257,79 @@
             this.tabPage1.Text = "tabPage1";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // buttonClear
+            // 
+            this.buttonClear.Location = new System.Drawing.Point(60, 352);
+            this.buttonClear.Name = "buttonClear";
+            this.buttonClear.Size = new System.Drawing.Size(84, 23);
+            this.buttonClear.TabIndex = 23;
+            this.buttonClear.Text = "Clear";
+            this.buttonClear.UseVisualStyleBackColor = true;
+            // 
+            // buttonAddToQueue
+            // 
+            this.buttonAddToQueue.Location = new System.Drawing.Point(281, 352);
+            this.buttonAddToQueue.Name = "buttonAddToQueue";
+            this.buttonAddToQueue.Size = new System.Drawing.Size(84, 23);
+            this.buttonAddToQueue.TabIndex = 22;
+            this.buttonAddToQueue.Text = "Add to queue";
+            this.buttonAddToQueue.UseVisualStyleBackColor = true;
+            this.buttonAddToQueue.Click += new System.EventHandler(this.buttonAddToQueue_Click);
+            // 
+            // checkBoxFadeInOut
+            // 
+            this.checkBoxFadeInOut.AutoSize = true;
+            this.checkBoxFadeInOut.Location = new System.Drawing.Point(292, 169);
+            this.checkBoxFadeInOut.Name = "checkBoxFadeInOut";
+            this.checkBoxFadeInOut.Size = new System.Drawing.Size(15, 14);
+            this.checkBoxFadeInOut.TabIndex = 21;
+            this.checkBoxFadeInOut.UseVisualStyleBackColor = true;
+            // 
+            // labelFadeINOUT
+            // 
+            this.labelFadeINOUT.AutoSize = true;
+            this.labelFadeINOUT.Location = new System.Drawing.Point(213, 169);
+            this.labelFadeINOUT.Name = "labelFadeINOUT";
+            this.labelFadeINOUT.Size = new System.Drawing.Size(73, 13);
+            this.labelFadeINOUT.TabIndex = 20;
+            this.labelFadeINOUT.Text = "FadeIN/OUT:";
+            // 
+            // checkBoxFadeOut
+            // 
+            this.checkBoxFadeOut.AutoSize = true;
+            this.checkBoxFadeOut.Location = new System.Drawing.Point(174, 169);
+            this.checkBoxFadeOut.Name = "checkBoxFadeOut";
+            this.checkBoxFadeOut.Size = new System.Drawing.Size(15, 14);
+            this.checkBoxFadeOut.TabIndex = 19;
+            this.checkBoxFadeOut.UseVisualStyleBackColor = true;
+            // 
+            // labelFadeOUT
+            // 
+            this.labelFadeOUT.AutoSize = true;
+            this.labelFadeOUT.Location = new System.Drawing.Point(111, 170);
+            this.labelFadeOUT.Name = "labelFadeOUT";
+            this.labelFadeOUT.Size = new System.Drawing.Size(57, 13);
+            this.labelFadeOUT.TabIndex = 18;
+            this.labelFadeOUT.Text = "FadeOUT:";
+            // 
+            // checkBoxFadeIn
+            // 
+            this.checkBoxFadeIn.AutoSize = true;
+            this.checkBoxFadeIn.Location = new System.Drawing.Point(60, 170);
+            this.checkBoxFadeIn.Name = "checkBoxFadeIn";
+            this.checkBoxFadeIn.Size = new System.Drawing.Size(15, 14);
+            this.checkBoxFadeIn.TabIndex = 17;
+            this.checkBoxFadeIn.UseVisualStyleBackColor = true;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(9, 170);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(42, 13);
+            this.label2.TabIndex = 16;
+            this.label2.Text = "FadeIN";
+            // 
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.listViewQueue);
@@ -276,6 +349,8 @@
             this.columnHeader3,
             this.columnHeader4,
             this.columnHeader5});
+            this.listViewQueue.FullRowSelect = true;
+            this.listViewQueue.GridLines = true;
             this.listViewQueue.Location = new System.Drawing.Point(6, 6);
             this.listViewQueue.MultiSelect = false;
             this.listViewQueue.Name = "listViewQueue";
@@ -283,99 +358,31 @@
             this.listViewQueue.TabIndex = 0;
             this.listViewQueue.UseCompatibleStateImageBehavior = false;
             this.listViewQueue.View = System.Windows.Forms.View.Details;
-            this.listViewQueue.SelectedIndexChanged += new System.EventHandler(this.listViewQueue_SelectedIndexChanged);
-            // 
-            // checkBoxFadeIN
-            // 
-            this.checkBoxFadeIN.AutoSize = true;
-            this.checkBoxFadeIN.Location = new System.Drawing.Point(60, 170);
-            this.checkBoxFadeIN.Name = "checkBoxFadeIN";
-            this.checkBoxFadeIN.Size = new System.Drawing.Size(15, 14);
-            this.checkBoxFadeIN.TabIndex = 17;
-            this.checkBoxFadeIN.UseVisualStyleBackColor = true;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(9, 170);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(42, 13);
-            this.label2.TabIndex = 16;
-            this.label2.Text = "FadeIN";
-            // 
-            // checkBox2
-            // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(174, 169);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(15, 14);
-            this.checkBox2.TabIndex = 19;
-            this.checkBox2.UseVisualStyleBackColor = true;
-            // 
-            // labelFadeOUT
-            // 
-            this.labelFadeOUT.AutoSize = true;
-            this.labelFadeOUT.Location = new System.Drawing.Point(111, 170);
-            this.labelFadeOUT.Name = "labelFadeOUT";
-            this.labelFadeOUT.Size = new System.Drawing.Size(57, 13);
-            this.labelFadeOUT.TabIndex = 18;
-            this.labelFadeOUT.Text = "FadeOUT:";
-            // 
-            // checkBox3
-            // 
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.Location = new System.Drawing.Point(292, 169);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(15, 14);
-            this.checkBox3.TabIndex = 21;
-            this.checkBox3.UseVisualStyleBackColor = true;
-            // 
-            // labelFadeINOUT
-            // 
-            this.labelFadeINOUT.AutoSize = true;
-            this.labelFadeINOUT.Location = new System.Drawing.Point(213, 169);
-            this.labelFadeINOUT.Name = "labelFadeINOUT";
-            this.labelFadeINOUT.Size = new System.Drawing.Size(73, 13);
-            this.labelFadeINOUT.TabIndex = 20;
-            this.labelFadeINOUT.Text = "FadeIN/OUT:";
-            // 
-            // buttonAddToQueue
-            // 
-            this.buttonAddToQueue.Location = new System.Drawing.Point(281, 352);
-            this.buttonAddToQueue.Name = "buttonAddToQueue";
-            this.buttonAddToQueue.Size = new System.Drawing.Size(84, 23);
-            this.buttonAddToQueue.TabIndex = 22;
-            this.buttonAddToQueue.Text = "Add to queue";
-            this.buttonAddToQueue.UseVisualStyleBackColor = true;
-            // 
-            // buttonClear
-            // 
-            this.buttonClear.Location = new System.Drawing.Point(60, 352);
-            this.buttonClear.Name = "buttonClear";
-            this.buttonClear.Size = new System.Drawing.Size(84, 23);
-            this.buttonClear.TabIndex = 23;
-            this.buttonClear.Text = "Clear";
-            this.buttonClear.UseVisualStyleBackColor = true;
             // 
             // columnHeader1
             // 
             this.columnHeader1.Text = "File";
+            this.columnHeader1.Width = 179;
             // 
             // columnHeader2
             // 
-            this.columnHeader2.Width = 120;
+            this.columnHeader2.Text = "Trim";
+            this.columnHeader2.Width = 134;
             // 
             // columnHeader3
             // 
-            this.columnHeader3.Width = 117;
+            this.columnHeader3.Text = "Resize";
+            this.columnHeader3.Width = 168;
             // 
             // columnHeader4
             // 
-            this.columnHeader4.Width = 103;
+            this.columnHeader4.Text = "Fade";
+            this.columnHeader4.Width = 132;
             // 
             // columnHeader5
             // 
-            this.columnHeader5.Width = 115;
+            this.columnHeader5.Text = "Output";
+            this.columnHeader5.Width = 286;
             // 
             // formMain
             // 
@@ -426,11 +433,11 @@
         private System.Windows.Forms.ListView listViewQueue;
         private System.Windows.Forms.Button buttonClear;
         private System.Windows.Forms.Button buttonAddToQueue;
-        private System.Windows.Forms.CheckBox checkBox3;
+        private System.Windows.Forms.CheckBox checkBoxFadeInOut;
         private System.Windows.Forms.Label labelFadeINOUT;
-        private System.Windows.Forms.CheckBox checkBox2;
+        private System.Windows.Forms.CheckBox checkBoxFadeOut;
         private System.Windows.Forms.Label labelFadeOUT;
-        private System.Windows.Forms.CheckBox checkBoxFadeIN;
+        private System.Windows.Forms.CheckBox checkBoxFadeIn;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
