@@ -33,6 +33,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.textBoxVideoDefaultPath = new System.Windows.Forms.TextBox();
             this.buttonDefaultVideoDirection = new System.Windows.Forms.Button();
+            this.buttonAVSOutput = new System.Windows.Forms.Button();
+            this.textBoxAVSOutput = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // buttonCancel
@@ -81,11 +84,40 @@
             this.buttonDefaultVideoDirection.UseVisualStyleBackColor = true;
             this.buttonDefaultVideoDirection.Click += new System.EventHandler(this.buttonDefaultVideoDirection_Click);
             // 
+            // buttonAVSOutput
+            // 
+            this.buttonAVSOutput.Location = new System.Drawing.Point(441, 50);
+            this.buttonAVSOutput.Name = "buttonAVSOutput";
+            this.buttonAVSOutput.Size = new System.Drawing.Size(25, 23);
+            this.buttonAVSOutput.TabIndex = 5;
+            this.buttonAVSOutput.Text = "...";
+            this.buttonAVSOutput.UseVisualStyleBackColor = true;
+            this.buttonAVSOutput.Click += new System.EventHandler(this.buttonAVSOutput_Click);
+            // 
+            // textBoxAVSOutput
+            // 
+            this.textBoxAVSOutput.Location = new System.Drawing.Point(132, 52);
+            this.textBoxAVSOutput.Name = "textBoxAVSOutput";
+            this.textBoxAVSOutput.Size = new System.Drawing.Size(303, 20);
+            this.textBoxAVSOutput.TabIndex = 6;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(12, 55);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(118, 13);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "Set default AVS output:";
+            // 
             // FormSettings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(478, 261);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.textBoxAVSOutput);
+            this.Controls.Add(this.buttonAVSOutput);
             this.Controls.Add(this.buttonDefaultVideoDirection);
             this.Controls.Add(this.textBoxVideoDefaultPath);
             this.Controls.Add(this.label1);
@@ -108,5 +140,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBoxVideoDefaultPath;
         private System.Windows.Forms.Button buttonDefaultVideoDirection;
+        private System.Windows.Forms.Button buttonAVSOutput;
+        private System.Windows.Forms.TextBox textBoxAVSOutput;
+        private System.Windows.Forms.Label label2;
     }
 }

@@ -13,11 +13,27 @@ namespace AVS_Script_Creator
 {
     public partial class FormSettings : Form
     {
+
+        FolderBrowserDialog folderBrowserDialog = new FolderBrowserDialog();
+
+       
+
+
         public FormSettings()
         {
             InitializeComponent();
             textBoxVideoDefaultPath.Text = Properties.Settings.Default.VideoDefaultPath.ToString();
+            textBoxAVSOutput.Text = Properties.Settings.Default.AVSOutput.ToString();
+
+
+            // Set the help text description for the FolderBrowserDialog.
+            folderBrowserDialog.Description ="Select the directory that you want to use as the default.";
+            // Do not allow the user to create new files via the FolderBrowserDialog.
+            folderBrowserDialog.ShowNewFolderButton = false;
+            // Default to the Desktop folder.
+            folderBrowserDialog.RootFolder = System.Environment.SpecialFolder.Desktop;
         }
+
 
         private void buttonCancel_Click(object sender, EventArgs e)
         {
@@ -27,26 +43,42 @@ namespace AVS_Script_Creator
         private void buttonSave_Click(object sender, EventArgs e)
         {
             Properties.Settings.Default.VideoDefaultPath = textBoxVideoDefaultPath.Text;
+            Properties.Settings.Default.AVSOutput = textBoxAVSOutput.Text;
+
+
+
             Properties.Settings.Default.Save();
             this.Close();
         }
 
         private void buttonDefaultVideoDirection_Click(object sender, EventArgs e)
         {
-            FolderBrowserDialog folderBrowserDialog1 = new FolderBrowserDialog();
+            if (folderBrowserDialog.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    textBoxVideoDefaultPath.Text = folderBrowserDialog.SelectedPath.ToString();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: Could not read folder from disk. Original error: " + ex.Message);
+                }
+            }
+        }
 
-            // Set the help text description for the FolderBrowserDialog.
-            folderBrowserDialog1.Description =
-                "Select the directory that you want to use as the default.";
-
-            // Do not allow the user to create new files via the FolderBrowserDialog.
-            folderBrowserDialog1.ShowNewFolderButton = false;
-
-            // Default to the Desktop folder.
-            folderBrowserDialog1.RootFolder = System.Environment.SpecialFolder.Desktop;
-            folderBrowserDialog1.ShowDialog();
-
-            textBoxVideoDefaultPath.Text = folderBrowserDialog1.SelectedPath.ToString();
+        private void buttonAVSOutput_Click(object sender, EventArgs e)
+        {
+            if (folderBrowserDialog.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    textBoxAVSOutput.Text = folderBrowserDialog.SelectedPath.ToString();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: Could not read folder from disk. Original error: " + ex.Message);
+                }
+            }
         }
     }
 }

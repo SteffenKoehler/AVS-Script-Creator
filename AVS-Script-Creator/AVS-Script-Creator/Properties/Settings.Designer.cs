@@ -34,5 +34,17 @@ namespace AVS_Script_Creator.Properties {
                 this["VideoDefaultPath"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string AVSOutput {
+            get {
+                return ((string)(this["AVSOutput"]));
+            }
+            set {
+                this["AVSOutput"] = value;
+            }
+        }
     }
 }
