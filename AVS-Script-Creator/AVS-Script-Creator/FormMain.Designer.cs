@@ -39,6 +39,8 @@
             this.checkBoxTrim = new System.Windows.Forms.CheckBox();
             this.numericUpDownTrimEnd = new System.Windows.Forms.NumericUpDown();
             this.numericUpDownTrimStart = new System.Windows.Forms.NumericUpDown();
+            this.comboBoxResize = new System.Windows.Forms.ComboBox();
+            this.labelResize = new System.Windows.Forms.Label();
             this.menuStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownTrimEnd)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownTrimStart)).BeginInit();
@@ -71,7 +73,7 @@
             // 
             // textBoxVideo
             // 
-            this.textBoxVideo.Location = new System.Drawing.Point(52, 74);
+            this.textBoxVideo.Location = new System.Drawing.Point(63, 74);
             this.textBoxVideo.Name = "textBoxVideo";
             this.textBoxVideo.Size = new System.Drawing.Size(305, 20);
             this.textBoxVideo.TabIndex = 3;
@@ -91,7 +93,7 @@
             // 
             // buttonOpenVideo
             // 
-            this.buttonOpenVideo.Location = new System.Drawing.Point(363, 72);
+            this.buttonOpenVideo.Location = new System.Drawing.Point(374, 72);
             this.buttonOpenVideo.Name = "buttonOpenVideo";
             this.buttonOpenVideo.Size = new System.Drawing.Size(26, 23);
             this.buttonOpenVideo.TabIndex = 5;
@@ -111,7 +113,7 @@
             // checkBoxTrim
             // 
             this.checkBoxTrim.AutoSize = true;
-            this.checkBoxTrim.Location = new System.Drawing.Point(52, 114);
+            this.checkBoxTrim.Location = new System.Drawing.Point(63, 114);
             this.checkBoxTrim.Name = "checkBoxTrim";
             this.checkBoxTrim.Size = new System.Drawing.Size(15, 14);
             this.checkBoxTrim.TabIndex = 7;
@@ -119,7 +121,7 @@
             // 
             // numericUpDownTrimEnd
             // 
-            this.numericUpDownTrimEnd.Location = new System.Drawing.Point(237, 112);
+            this.numericUpDownTrimEnd.Location = new System.Drawing.Point(248, 112);
             this.numericUpDownTrimEnd.Maximum = new decimal(new int[] {
             1215752191,
             23,
@@ -131,7 +133,7 @@
             // 
             // numericUpDownTrimStart
             // 
-            this.numericUpDownTrimStart.Location = new System.Drawing.Point(90, 112);
+            this.numericUpDownTrimStart.Location = new System.Drawing.Point(101, 112);
             this.numericUpDownTrimStart.Maximum = new decimal(new int[] {
             1215752191,
             23,
@@ -141,11 +143,29 @@
             this.numericUpDownTrimStart.Size = new System.Drawing.Size(120, 20);
             this.numericUpDownTrimStart.TabIndex = 9;
             // 
+            // comboBoxResize
+            // 
+            this.comboBoxResize.Location = new System.Drawing.Point(63, 141);
+            this.comboBoxResize.Name = "comboBoxResize";
+            this.comboBoxResize.Size = new System.Drawing.Size(158, 21);
+            this.comboBoxResize.TabIndex = 10;
+            // 
+            // labelResize
+            // 
+            this.labelResize.AutoSize = true;
+            this.labelResize.Location = new System.Drawing.Point(12, 144);
+            this.labelResize.Name = "labelResize";
+            this.labelResize.Size = new System.Drawing.Size(42, 13);
+            this.labelResize.TabIndex = 11;
+            this.labelResize.Text = "Resize:";
+            // 
             // formMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1229, 509);
+            this.Controls.Add(this.labelResize);
+            this.Controls.Add(this.comboBoxResize);
             this.Controls.Add(this.numericUpDownTrimStart);
             this.Controls.Add(this.numericUpDownTrimEnd);
             this.Controls.Add(this.checkBoxTrim);
@@ -179,6 +199,8 @@
         private System.Windows.Forms.CheckBox checkBoxTrim;
         private System.Windows.Forms.NumericUpDown numericUpDownTrimEnd;
         private System.Windows.Forms.NumericUpDown numericUpDownTrimStart;
+        private System.Windows.Forms.ComboBox comboBoxResize;
+        private System.Windows.Forms.Label labelResize;
     }
 }
 

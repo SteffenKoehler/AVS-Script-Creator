@@ -8,5 +8,14 @@
     <Setting Name="AVSOutput" Type="System.String" Scope="User">
       <Value Profile="(Default)">C:\</Value>
     </Setting>
+    <Setting Name="ResizeValues" Type="System.Collections.Specialized.StringCollection" Scope="User">
+      <Value Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;ArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;string&gt;2160p: 3.840 x 2.160&lt;/string&gt;
+  &lt;string&gt;1440p: 2.560 x 1.440&lt;/string&gt;
+  &lt;string&gt;1080p: 1.920 x 1.080&lt;/string&gt;
+  &lt;string&gt;720p: 1.280 x 720&lt;/string&gt;
+&lt;/ArrayOfString&gt;</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

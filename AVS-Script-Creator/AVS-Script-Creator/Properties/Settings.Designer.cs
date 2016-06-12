@@ -46,5 +46,23 @@ namespace AVS_Script_Creator.Properties {
                 this["AVSOutput"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute(@"<?xml version=""1.0"" encoding=""utf-16""?>
+<ArrayOfString xmlns:xsi=""http://www.w3.org/2001/XMLSchema-instance"" xmlns:xsd=""http://www.w3.org/2001/XMLSchema"">
+  <string>2160p: 3.840 x 2.160</string>
+  <string>1440p: 2.560 x 1.440</string>
+  <string>1080p: 1.920 x 1.080</string>
+  <string>720p: 1.280 x 720</string>
+</ArrayOfString>")]
+        public global::System.Collections.Specialized.StringCollection ResizeValues {
+            get {
+                return ((global::System.Collections.Specialized.StringCollection)(this["ResizeValues"]));
+            }
+            set {
+                this["ResizeValues"] = value;
+            }
+        }
     }
 }

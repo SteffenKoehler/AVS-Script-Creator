@@ -16,7 +16,8 @@ namespace AVS_Script_Creator
         public formMain()
         {
             InitializeComponent();
-           
+            initResizeComboBox();
+            
         }
 
         private void menüToolStripMenuItem_Click(object sender, EventArgs e)
@@ -29,6 +30,18 @@ namespace AVS_Script_Creator
         private void queueToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void initResizeComboBox()
+        {
+            comboBoxResize.DropDownStyle = ComboBoxStyle.DropDownList;
+            
+            foreach(var resizeItem in Properties.Settings.Default.ResizeValues)
+            {
+                comboBoxResize.Items.Add(resizeItem);
+            }
+
+            comboBoxResize.Text = "1080p: 1.920 x 1.080";
         }
 
         private void buttonOpenVideo_Click(object sender, EventArgs e)
