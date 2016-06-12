@@ -52,8 +52,8 @@
             // menüToolStripMenuItem
             // 
             this.menüToolStripMenuItem.Name = "menüToolStripMenuItem";
-            this.menüToolStripMenuItem.Size = new System.Drawing.Size(50, 20);
-            this.menüToolStripMenuItem.Text = "Menü";
+            this.menüToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
+            this.menüToolStripMenuItem.Text = "Settings";
             this.menüToolStripMenuItem.Click += new System.EventHandler(this.menüToolStripMenuItem_Click);
             // 
             // queueToolStripMenuItem
