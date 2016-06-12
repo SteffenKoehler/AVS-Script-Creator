@@ -41,6 +41,7 @@
             this.numericUpDownTrimStart = new System.Windows.Forms.NumericUpDown();
             this.comboBoxResize = new System.Windows.Forms.ComboBox();
             this.labelResize = new System.Windows.Forms.Label();
+            this.checkBoxResize = new System.Windows.Forms.CheckBox();
             this.menuStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownTrimEnd)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownTrimStart)).BeginInit();
@@ -145,7 +146,7 @@
             // 
             // comboBoxResize
             // 
-            this.comboBoxResize.Location = new System.Drawing.Point(63, 141);
+            this.comboBoxResize.Location = new System.Drawing.Point(101, 141);
             this.comboBoxResize.Name = "comboBoxResize";
             this.comboBoxResize.Size = new System.Drawing.Size(158, 21);
             this.comboBoxResize.TabIndex = 10;
@@ -159,11 +160,21 @@
             this.labelResize.TabIndex = 11;
             this.labelResize.Text = "Resize:";
             // 
+            // checkBoxResize
+            // 
+            this.checkBoxResize.AutoSize = true;
+            this.checkBoxResize.Location = new System.Drawing.Point(63, 144);
+            this.checkBoxResize.Name = "checkBoxResize";
+            this.checkBoxResize.Size = new System.Drawing.Size(15, 14);
+            this.checkBoxResize.TabIndex = 12;
+            this.checkBoxResize.UseVisualStyleBackColor = true;
+            // 
             // formMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1229, 509);
+            this.Controls.Add(this.checkBoxResize);
             this.Controls.Add(this.labelResize);
             this.Controls.Add(this.comboBoxResize);
             this.Controls.Add(this.numericUpDownTrimStart);
@@ -201,6 +212,7 @@
         private System.Windows.Forms.NumericUpDown numericUpDownTrimStart;
         private System.Windows.Forms.ComboBox comboBoxResize;
         private System.Windows.Forms.Label labelResize;
+        private System.Windows.Forms.CheckBox checkBoxResize;
     }
 }
 
