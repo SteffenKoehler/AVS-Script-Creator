@@ -194,5 +194,39 @@ namespace AVS_Script_Creator
 
             listViewQueue.Items.Add(lvi);
         }
+
+        private void buttonClear_Click(object sender, EventArgs e)
+        {
+
+            string output = Properties.Settings.Default.AVSOutput.ToString() + "\\";
+            string path = @output + "test.avs";
+
+
+            
+
+
+
+
+
+
+
+
+            if (!File.Exists(path))
+            {
+                // Create a file to write to.
+                using (StreamWriter sw = File.CreateText(path))
+                {
+                    sw.WriteLine("#Created with AVS-Script-Creator by Steffen Köhler");
+                    sw.WriteLine("LoadPlugin('E:\\Software\\AviSynth 2.5\\plugins\\TransAll.dll')");
+                    sw.WriteLine("LoadPlugin('E:\\Software\\SagaraS Scriptmaker\\Plugins\\SplineResize.dll')");
+                    sw.WriteLine("clip = AVISource('A:\\Watch Dogs 3.avi', audio = false).AssumeFPS(30, 1).ConvertToYV12()");
+                    sw.WriteLine("clip = AudioDub(clip1, WAVSource('A:\\Watch Dogs 3.wav'))");
+                    sw.WriteLine("clip = Trim(clip1, 0, 50167)");
+                    sw.WriteLine("clip.Spline100Resize(2080, 1170)");
+                    sw.WriteLine("clip.FadeIO2(30, fps = 30)");
+                   
+                }
+            }
+        }
     }
 }
