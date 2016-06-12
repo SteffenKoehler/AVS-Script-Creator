@@ -54,12 +54,14 @@
             this.menüToolStripMenuItem.Name = "menüToolStripMenuItem";
             this.menüToolStripMenuItem.Size = new System.Drawing.Size(50, 20);
             this.menüToolStripMenuItem.Text = "Menü";
+            this.menüToolStripMenuItem.Click += new System.EventHandler(this.menüToolStripMenuItem_Click);
             // 
             // queueToolStripMenuItem
             // 
             this.queueToolStripMenuItem.Name = "queueToolStripMenuItem";
             this.queueToolStripMenuItem.Size = new System.Drawing.Size(54, 20);
             this.queueToolStripMenuItem.Text = "Queue";
+            this.queueToolStripMenuItem.Click += new System.EventHandler(this.queueToolStripMenuItem_Click);
             // 
             // textBoxVideo
             // 

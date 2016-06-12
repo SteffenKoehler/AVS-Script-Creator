@@ -18,6 +18,17 @@ namespace AVS_Script_Creator
             InitializeComponent();
         }
 
+        private void menüToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormSettings formSettings = new FormSettings();
+            formSettings.Show();
+        }
+
+        private void queueToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void buttonOpenVideo_Click(object sender, EventArgs e)
         {
             Stream myStream = null;
