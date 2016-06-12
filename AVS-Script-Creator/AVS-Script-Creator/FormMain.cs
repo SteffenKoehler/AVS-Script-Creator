@@ -21,6 +21,10 @@ namespace AVS_Script_Creator
             InitializeComponent();
             initResizeComboBox();
 
+            tabPage1.Text = "Create AVS";
+            tabPage2.Text = "Queue";
+
+
             // Add a delegate for the PlayStateChange event.
             windowsMediaPlayer.PlayStateChange += new AxWMPLib._WMPOCXEvents_PlayStateChangeEventHandler(windowsMediaPlayer_PlayStateChange);
             windowsMediaPlayer.settings.autoStart = false;
@@ -157,5 +161,6 @@ namespace AVS_Script_Creator
             int frameRate = (Convert.ToInt32(windowsMediaPlayer.currentMedia.getItemInfoByAtom(398)) / 1000);
             numericUpDownTrimEnd.Value = Convert.ToDecimal(windowsMediaPlayer.Ctlcontrols.currentPosition) * frameRate;
         }
+
     }
 }

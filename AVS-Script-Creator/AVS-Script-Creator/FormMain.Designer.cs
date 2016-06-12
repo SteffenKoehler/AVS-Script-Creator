@@ -31,7 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formMain));
             this.menuStrip = new System.Windows.Forms.MenuStrip();
             this.menüToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.queueToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.textBoxVideo = new System.Windows.Forms.TextBox();
             this.labelVideo = new System.Windows.Forms.Label();
             this.openFileDialogVideo = new System.Windows.Forms.OpenFileDialog();
@@ -46,17 +45,23 @@
             this.windowsMediaPlayer = new AxWMPLib.AxWindowsMediaPlayer();
             this.buttonTrimAddStartFrame = new System.Windows.Forms.Button();
             this.buttonTrimAddEndFrame = new System.Windows.Forms.Button();
+            this.tabControl = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.listView1 = new System.Windows.Forms.ListView();
             this.menuStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownTrimEnd)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownTrimStart)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.windowsMediaPlayer)).BeginInit();
+            this.tabControl.SuspendLayout();
+            this.tabPage1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip
             // 
             this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.menüToolStripMenuItem,
-            this.queueToolStripMenuItem});
+            this.menüToolStripMenuItem});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
             this.menuStrip.Size = new System.Drawing.Size(947, 24);
@@ -70,16 +75,9 @@
             this.menüToolStripMenuItem.Text = "Settings";
             this.menüToolStripMenuItem.Click += new System.EventHandler(this.menüToolStripMenuItem_Click);
             // 
-            // queueToolStripMenuItem
-            // 
-            this.queueToolStripMenuItem.Name = "queueToolStripMenuItem";
-            this.queueToolStripMenuItem.Size = new System.Drawing.Size(54, 20);
-            this.queueToolStripMenuItem.Text = "Queue";
-            this.queueToolStripMenuItem.Click += new System.EventHandler(this.queueToolStripMenuItem_Click);
-            // 
             // textBoxVideo
             // 
-            this.textBoxVideo.Location = new System.Drawing.Point(63, 43);
+            this.textBoxVideo.Location = new System.Drawing.Point(60, 14);
             this.textBoxVideo.Name = "textBoxVideo";
             this.textBoxVideo.Size = new System.Drawing.Size(305, 20);
             this.textBoxVideo.TabIndex = 3;
@@ -87,7 +85,7 @@
             // labelVideo
             // 
             this.labelVideo.AutoSize = true;
-            this.labelVideo.Location = new System.Drawing.Point(12, 46);
+            this.labelVideo.Location = new System.Drawing.Point(9, 17);
             this.labelVideo.Name = "labelVideo";
             this.labelVideo.Size = new System.Drawing.Size(37, 13);
             this.labelVideo.TabIndex = 4;
@@ -99,7 +97,7 @@
             // 
             // buttonOpenVideo
             // 
-            this.buttonOpenVideo.Location = new System.Drawing.Point(374, 41);
+            this.buttonOpenVideo.Location = new System.Drawing.Point(371, 12);
             this.buttonOpenVideo.Name = "buttonOpenVideo";
             this.buttonOpenVideo.Size = new System.Drawing.Size(26, 23);
             this.buttonOpenVideo.TabIndex = 5;
@@ -110,7 +108,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 83);
+            this.label1.Location = new System.Drawing.Point(9, 54);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(30, 13);
             this.label1.TabIndex = 6;
@@ -119,7 +117,7 @@
             // checkBoxTrim
             // 
             this.checkBoxTrim.AutoSize = true;
-            this.checkBoxTrim.Location = new System.Drawing.Point(63, 83);
+            this.checkBoxTrim.Location = new System.Drawing.Point(60, 54);
             this.checkBoxTrim.Name = "checkBoxTrim";
             this.checkBoxTrim.Size = new System.Drawing.Size(15, 14);
             this.checkBoxTrim.TabIndex = 7;
@@ -127,7 +125,7 @@
             // 
             // numericUpDownTrimEnd
             // 
-            this.numericUpDownTrimEnd.Location = new System.Drawing.Point(248, 81);
+            this.numericUpDownTrimEnd.Location = new System.Drawing.Point(245, 52);
             this.numericUpDownTrimEnd.Maximum = new decimal(new int[] {
             1215752191,
             23,
@@ -139,7 +137,7 @@
             // 
             // numericUpDownTrimStart
             // 
-            this.numericUpDownTrimStart.Location = new System.Drawing.Point(101, 81);
+            this.numericUpDownTrimStart.Location = new System.Drawing.Point(98, 52);
             this.numericUpDownTrimStart.Maximum = new decimal(new int[] {
             1215752191,
             23,
@@ -151,7 +149,7 @@
             // 
             // comboBoxResize
             // 
-            this.comboBoxResize.Location = new System.Drawing.Point(101, 156);
+            this.comboBoxResize.Location = new System.Drawing.Point(98, 127);
             this.comboBoxResize.Name = "comboBoxResize";
             this.comboBoxResize.Size = new System.Drawing.Size(158, 21);
             this.comboBoxResize.TabIndex = 10;
@@ -159,7 +157,7 @@
             // labelResize
             // 
             this.labelResize.AutoSize = true;
-            this.labelResize.Location = new System.Drawing.Point(12, 159);
+            this.labelResize.Location = new System.Drawing.Point(9, 130);
             this.labelResize.Name = "labelResize";
             this.labelResize.Size = new System.Drawing.Size(42, 13);
             this.labelResize.TabIndex = 11;
@@ -168,7 +166,7 @@
             // checkBoxResize
             // 
             this.checkBoxResize.AutoSize = true;
-            this.checkBoxResize.Location = new System.Drawing.Point(63, 159);
+            this.checkBoxResize.Location = new System.Drawing.Point(60, 130);
             this.checkBoxResize.Name = "checkBoxResize";
             this.checkBoxResize.Size = new System.Drawing.Size(15, 14);
             this.checkBoxResize.TabIndex = 12;
@@ -177,7 +175,7 @@
             // windowsMediaPlayer
             // 
             this.windowsMediaPlayer.Enabled = true;
-            this.windowsMediaPlayer.Location = new System.Drawing.Point(424, 41);
+            this.windowsMediaPlayer.Location = new System.Drawing.Point(409, 7);
             this.windowsMediaPlayer.Name = "windowsMediaPlayer";
             this.windowsMediaPlayer.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("windowsMediaPlayer.OcxState")));
             this.windowsMediaPlayer.Size = new System.Drawing.Size(503, 415);
@@ -186,7 +184,7 @@
             // buttonTrimAddStartFrame
             // 
             this.buttonTrimAddStartFrame.Enabled = false;
-            this.buttonTrimAddStartFrame.Location = new System.Drawing.Point(101, 107);
+            this.buttonTrimAddStartFrame.Location = new System.Drawing.Point(98, 78);
             this.buttonTrimAddStartFrame.Name = "buttonTrimAddStartFrame";
             this.buttonTrimAddStartFrame.Size = new System.Drawing.Size(120, 23);
             this.buttonTrimAddStartFrame.TabIndex = 14;
@@ -197,7 +195,7 @@
             // buttonTrimAddEndFrame
             // 
             this.buttonTrimAddEndFrame.Enabled = false;
-            this.buttonTrimAddEndFrame.Location = new System.Drawing.Point(248, 107);
+            this.buttonTrimAddEndFrame.Location = new System.Drawing.Point(245, 78);
             this.buttonTrimAddEndFrame.Name = "buttonTrimAddEndFrame";
             this.buttonTrimAddEndFrame.Size = new System.Drawing.Size(120, 23);
             this.buttonTrimAddEndFrame.TabIndex = 15;
@@ -205,25 +203,66 @@
             this.buttonTrimAddEndFrame.UseVisualStyleBackColor = true;
             this.buttonTrimAddEndFrame.Click += new System.EventHandler(this.buttonTrimAddEndFrame_Click);
             // 
+            // tabControl
+            // 
+            this.tabControl.Controls.Add(this.tabPage1);
+            this.tabControl.Controls.Add(this.tabPage2);
+            this.tabControl.Location = new System.Drawing.Point(12, 27);
+            this.tabControl.Name = "tabControl";
+            this.tabControl.SelectedIndex = 0;
+            this.tabControl.Size = new System.Drawing.Size(923, 454);
+            this.tabControl.TabIndex = 16;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.buttonTrimAddEndFrame);
+            this.tabPage1.Controls.Add(this.windowsMediaPlayer);
+            this.tabPage1.Controls.Add(this.buttonTrimAddStartFrame);
+            this.tabPage1.Controls.Add(this.checkBoxResize);
+            this.tabPage1.Controls.Add(this.textBoxVideo);
+            this.tabPage1.Controls.Add(this.labelResize);
+            this.tabPage1.Controls.Add(this.labelVideo);
+            this.tabPage1.Controls.Add(this.comboBoxResize);
+            this.tabPage1.Controls.Add(this.buttonOpenVideo);
+            this.tabPage1.Controls.Add(this.numericUpDownTrimStart);
+            this.tabPage1.Controls.Add(this.label1);
+            this.tabPage1.Controls.Add(this.numericUpDownTrimEnd);
+            this.tabPage1.Controls.Add(this.checkBoxTrim);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(915, 428);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "tabPage1";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.listView1);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(915, 428);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "tabPage2";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // listView1
+            // 
+            this.listView1.Location = new System.Drawing.Point(6, 6);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(903, 354);
+            this.listView1.TabIndex = 0;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            // 
             // formMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(947, 493);
-            this.Controls.Add(this.buttonTrimAddEndFrame);
-            this.Controls.Add(this.buttonTrimAddStartFrame);
-            this.Controls.Add(this.windowsMediaPlayer);
-            this.Controls.Add(this.checkBoxResize);
-            this.Controls.Add(this.labelResize);
-            this.Controls.Add(this.comboBoxResize);
-            this.Controls.Add(this.numericUpDownTrimStart);
-            this.Controls.Add(this.numericUpDownTrimEnd);
-            this.Controls.Add(this.checkBoxTrim);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.buttonOpenVideo);
-            this.Controls.Add(this.labelVideo);
-            this.Controls.Add(this.textBoxVideo);
+            this.Controls.Add(this.tabControl);
             this.Controls.Add(this.menuStrip);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MainMenuStrip = this.menuStrip;
             this.Name = "formMain";
             this.Text = "AVS Script Creator";
@@ -232,6 +271,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownTrimEnd)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownTrimStart)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.windowsMediaPlayer)).EndInit();
+            this.tabControl.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage1.PerformLayout();
+            this.tabPage2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -241,7 +284,6 @@
 
         private System.Windows.Forms.MenuStrip menuStrip;
         private System.Windows.Forms.ToolStripMenuItem menüToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem queueToolStripMenuItem;
         private System.Windows.Forms.TextBox textBoxVideo;
         private System.Windows.Forms.Label labelVideo;
         private System.Windows.Forms.OpenFileDialog openFileDialogVideo;
@@ -256,6 +298,10 @@
         private AxWMPLib.AxWindowsMediaPlayer windowsMediaPlayer;
         private System.Windows.Forms.Button buttonTrimAddStartFrame;
         private System.Windows.Forms.Button buttonTrimAddEndFrame;
+        private System.Windows.Forms.TabControl tabControl;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.ListView listView1;
     }
 }
 
