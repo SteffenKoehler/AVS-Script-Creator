@@ -1,1 +1,9 @@
 E:\Bibliothek\Dokumente\GitHub\cSharpProjects\AVS-Script-Creator\AVS-Script-Creator\AVS-Script-Creator\bin\Debug\AVS-Script-Creator.exe.config
+E:\Bibliothek\Dokumente\GitHub\cSharpProjects\AVS-Script-Creator\AVS-Script-Creator\AVS-Script-Creator\obj\Debug\AVS-Script-Creator.csprojResolveAssemblyReference.cache
+E:\Bibliothek\Dokumente\GitHub\cSharpProjects\AVS-Script-Creator\AVS-Script-Creator\AVS-Script-Creator\obj\Debug\AVS_Script_Creator.formMain.resources
+E:\Bibliothek\Dokumente\GitHub\cSharpProjects\AVS-Script-Creator\AVS-Script-Creator\AVS-Script-Creator\obj\Debug\AVS_Script_Creator.Properties.Resources.resources
+E:\Bibliothek\Dokumente\GitHub\cSharpProjects\AVS-Script-Creator\AVS-Script-Creator\AVS-Script-Creator\obj\Debug\AVS-Script-Creator.csproj.GenerateResource.Cache
+E:\Bibliothek\Dokumente\GitHub\cSharpProjects\AVS-Script-Creator\AVS-Script-Creator\AVS-Script-Creator\bin\Debug\AVS-Script-Creator.exe
+E:\Bibliothek\Dokumente\GitHub\cSharpProjects\AVS-Script-Creator\AVS-Script-Creator\AVS-Script-Creator\bin\Debug\AVS-Script-Creator.pdb
+E:\Bibliothek\Dokumente\GitHub\cSharpProjects\AVS-Script-Creator\AVS-Script-Creator\AVS-Script-Creator\obj\Debug\AVS-Script-Creator.exe
+E:\Bibliothek\Dokumente\GitHub\cSharpProjects\AVS-Script-Creator\AVS-Script-Creator\AVS-Script-Creator\obj\Debug\AVS-Script-Creator.pdb
