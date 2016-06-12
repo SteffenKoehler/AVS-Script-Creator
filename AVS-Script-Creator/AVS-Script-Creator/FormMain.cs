@@ -37,9 +37,9 @@ namespace AVS_Script_Creator
             formSettings.TopMost = true;
         }
 
-        private void queueToolStripMenuItem_Click(object sender, EventArgs e)
+        private void initListViewQueue()
         {
-
+            
         }
 
         private void initResizeComboBox()

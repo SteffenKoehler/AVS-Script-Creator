@@ -48,7 +48,15 @@
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.listViewQueue = new System.Windows.Forms.ListView();
+            this.checkBoxFadeIN = new System.Windows.Forms.CheckBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.labelFadeOUT = new System.Windows.Forms.Label();
+            this.checkBox3 = new System.Windows.Forms.CheckBox();
+            this.labelFadeINOUT = new System.Windows.Forms.Label();
+            this.buttonAddToQueue = new System.Windows.Forms.Button();
+            this.buttonClear = new System.Windows.Forms.Button();
             this.menuStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownTrimEnd)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownTrimStart)).BeginInit();
@@ -108,7 +116,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(9, 54);
+            this.label1.Location = new System.Drawing.Point(9, 59);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(30, 13);
             this.label1.TabIndex = 6;
@@ -117,7 +125,7 @@
             // checkBoxTrim
             // 
             this.checkBoxTrim.AutoSize = true;
-            this.checkBoxTrim.Location = new System.Drawing.Point(60, 54);
+            this.checkBoxTrim.Location = new System.Drawing.Point(60, 59);
             this.checkBoxTrim.Name = "checkBoxTrim";
             this.checkBoxTrim.Size = new System.Drawing.Size(15, 14);
             this.checkBoxTrim.TabIndex = 7;
@@ -125,7 +133,7 @@
             // 
             // numericUpDownTrimEnd
             // 
-            this.numericUpDownTrimEnd.Location = new System.Drawing.Point(245, 52);
+            this.numericUpDownTrimEnd.Location = new System.Drawing.Point(245, 57);
             this.numericUpDownTrimEnd.Maximum = new decimal(new int[] {
             1215752191,
             23,
@@ -137,7 +145,7 @@
             // 
             // numericUpDownTrimStart
             // 
-            this.numericUpDownTrimStart.Location = new System.Drawing.Point(98, 52);
+            this.numericUpDownTrimStart.Location = new System.Drawing.Point(98, 57);
             this.numericUpDownTrimStart.Maximum = new decimal(new int[] {
             1215752191,
             23,
@@ -151,7 +159,7 @@
             // 
             this.comboBoxResize.Location = new System.Drawing.Point(98, 127);
             this.comboBoxResize.Name = "comboBoxResize";
-            this.comboBoxResize.Size = new System.Drawing.Size(158, 21);
+            this.comboBoxResize.Size = new System.Drawing.Size(267, 21);
             this.comboBoxResize.TabIndex = 10;
             // 
             // labelResize
@@ -184,7 +192,7 @@
             // buttonTrimAddStartFrame
             // 
             this.buttonTrimAddStartFrame.Enabled = false;
-            this.buttonTrimAddStartFrame.Location = new System.Drawing.Point(98, 78);
+            this.buttonTrimAddStartFrame.Location = new System.Drawing.Point(98, 83);
             this.buttonTrimAddStartFrame.Name = "buttonTrimAddStartFrame";
             this.buttonTrimAddStartFrame.Size = new System.Drawing.Size(120, 23);
             this.buttonTrimAddStartFrame.TabIndex = 14;
@@ -195,7 +203,7 @@
             // buttonTrimAddEndFrame
             // 
             this.buttonTrimAddEndFrame.Enabled = false;
-            this.buttonTrimAddEndFrame.Location = new System.Drawing.Point(245, 78);
+            this.buttonTrimAddEndFrame.Location = new System.Drawing.Point(245, 83);
             this.buttonTrimAddEndFrame.Name = "buttonTrimAddEndFrame";
             this.buttonTrimAddEndFrame.Size = new System.Drawing.Size(120, 23);
             this.buttonTrimAddEndFrame.TabIndex = 15;
@@ -215,6 +223,14 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.buttonClear);
+            this.tabPage1.Controls.Add(this.buttonAddToQueue);
+            this.tabPage1.Controls.Add(this.checkBox3);
+            this.tabPage1.Controls.Add(this.labelFadeINOUT);
+            this.tabPage1.Controls.Add(this.checkBox2);
+            this.tabPage1.Controls.Add(this.labelFadeOUT);
+            this.tabPage1.Controls.Add(this.checkBoxFadeIN);
+            this.tabPage1.Controls.Add(this.label2);
             this.tabPage1.Controls.Add(this.buttonTrimAddEndFrame);
             this.tabPage1.Controls.Add(this.windowsMediaPlayer);
             this.tabPage1.Controls.Add(this.buttonTrimAddStartFrame);
@@ -238,7 +254,7 @@
             // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.listView1);
+            this.tabPage2.Controls.Add(this.listViewQueue);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
@@ -247,13 +263,85 @@
             this.tabPage2.Text = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // listView1
+            // listViewQueue
             // 
-            this.listView1.Location = new System.Drawing.Point(6, 6);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(903, 354);
-            this.listView1.TabIndex = 0;
-            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listViewQueue.Location = new System.Drawing.Point(6, 6);
+            this.listViewQueue.Name = "listViewQueue";
+            this.listViewQueue.Size = new System.Drawing.Size(903, 354);
+            this.listViewQueue.TabIndex = 0;
+            this.listViewQueue.UseCompatibleStateImageBehavior = false;
+            // 
+            // checkBoxFadeIN
+            // 
+            this.checkBoxFadeIN.AutoSize = true;
+            this.checkBoxFadeIN.Location = new System.Drawing.Point(60, 170);
+            this.checkBoxFadeIN.Name = "checkBoxFadeIN";
+            this.checkBoxFadeIN.Size = new System.Drawing.Size(15, 14);
+            this.checkBoxFadeIN.TabIndex = 17;
+            this.checkBoxFadeIN.UseVisualStyleBackColor = true;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(9, 170);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(42, 13);
+            this.label2.TabIndex = 16;
+            this.label2.Text = "FadeIN";
+            // 
+            // checkBox2
+            // 
+            this.checkBox2.AutoSize = true;
+            this.checkBox2.Location = new System.Drawing.Point(174, 169);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(15, 14);
+            this.checkBox2.TabIndex = 19;
+            this.checkBox2.UseVisualStyleBackColor = true;
+            // 
+            // labelFadeOUT
+            // 
+            this.labelFadeOUT.AutoSize = true;
+            this.labelFadeOUT.Location = new System.Drawing.Point(111, 170);
+            this.labelFadeOUT.Name = "labelFadeOUT";
+            this.labelFadeOUT.Size = new System.Drawing.Size(57, 13);
+            this.labelFadeOUT.TabIndex = 18;
+            this.labelFadeOUT.Text = "FadeOUT:";
+            // 
+            // checkBox3
+            // 
+            this.checkBox3.AutoSize = true;
+            this.checkBox3.Location = new System.Drawing.Point(292, 169);
+            this.checkBox3.Name = "checkBox3";
+            this.checkBox3.Size = new System.Drawing.Size(15, 14);
+            this.checkBox3.TabIndex = 21;
+            this.checkBox3.UseVisualStyleBackColor = true;
+            // 
+            // labelFadeINOUT
+            // 
+            this.labelFadeINOUT.AutoSize = true;
+            this.labelFadeINOUT.Location = new System.Drawing.Point(213, 169);
+            this.labelFadeINOUT.Name = "labelFadeINOUT";
+            this.labelFadeINOUT.Size = new System.Drawing.Size(73, 13);
+            this.labelFadeINOUT.TabIndex = 20;
+            this.labelFadeINOUT.Text = "FadeIN/OUT:";
+            // 
+            // buttonAddToQueue
+            // 
+            this.buttonAddToQueue.Location = new System.Drawing.Point(281, 352);
+            this.buttonAddToQueue.Name = "buttonAddToQueue";
+            this.buttonAddToQueue.Size = new System.Drawing.Size(84, 23);
+            this.buttonAddToQueue.TabIndex = 22;
+            this.buttonAddToQueue.Text = "Add to queue";
+            this.buttonAddToQueue.UseVisualStyleBackColor = true;
+            // 
+            // buttonClear
+            // 
+            this.buttonClear.Location = new System.Drawing.Point(60, 352);
+            this.buttonClear.Name = "buttonClear";
+            this.buttonClear.Size = new System.Drawing.Size(84, 23);
+            this.buttonClear.TabIndex = 23;
+            this.buttonClear.Text = "Clear";
+            this.buttonClear.UseVisualStyleBackColor = true;
             // 
             // formMain
             // 
@@ -301,7 +389,15 @@
         private System.Windows.Forms.TabControl tabControl;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ListView listViewQueue;
+        private System.Windows.Forms.Button buttonClear;
+        private System.Windows.Forms.Button buttonAddToQueue;
+        private System.Windows.Forms.CheckBox checkBox3;
+        private System.Windows.Forms.Label labelFadeINOUT;
+        private System.Windows.Forms.CheckBox checkBox2;
+        private System.Windows.Forms.Label labelFadeOUT;
+        private System.Windows.Forms.CheckBox checkBoxFadeIN;
+        private System.Windows.Forms.Label label2;
     }
 }
 
