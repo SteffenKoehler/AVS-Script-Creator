@@ -22,6 +22,7 @@ namespace AVS_Script_Creator
         {
             FormSettings formSettings = new FormSettings();
             formSettings.Show();
+            formSettings.TopMost = true;
         }
 
         private void queueToolStripMenuItem_Click(object sender, EventArgs e)

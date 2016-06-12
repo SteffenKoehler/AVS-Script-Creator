@@ -16,5 +16,10 @@ namespace AVS_Script_Creator
         {
             InitializeComponent();
         }
+
+        private void buttonCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
