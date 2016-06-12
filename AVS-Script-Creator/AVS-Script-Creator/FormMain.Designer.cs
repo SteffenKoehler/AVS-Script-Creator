@@ -57,6 +57,11 @@
             this.labelFadeINOUT = new System.Windows.Forms.Label();
             this.buttonAddToQueue = new System.Windows.Forms.Button();
             this.buttonClear = new System.Windows.Forms.Button();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.menuStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownTrimEnd)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownTrimStart)).BeginInit();
@@ -265,11 +270,20 @@
             // 
             // listViewQueue
             // 
+            this.listViewQueue.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.columnHeader2,
+            this.columnHeader3,
+            this.columnHeader4,
+            this.columnHeader5});
             this.listViewQueue.Location = new System.Drawing.Point(6, 6);
+            this.listViewQueue.MultiSelect = false;
             this.listViewQueue.Name = "listViewQueue";
             this.listViewQueue.Size = new System.Drawing.Size(903, 354);
             this.listViewQueue.TabIndex = 0;
             this.listViewQueue.UseCompatibleStateImageBehavior = false;
+            this.listViewQueue.View = System.Windows.Forms.View.Details;
+            this.listViewQueue.SelectedIndexChanged += new System.EventHandler(this.listViewQueue_SelectedIndexChanged);
             // 
             // checkBoxFadeIN
             // 
@@ -343,6 +357,26 @@
             this.buttonClear.Text = "Clear";
             this.buttonClear.UseVisualStyleBackColor = true;
             // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "File";
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Width = 120;
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Width = 117;
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Width = 103;
+            // 
+            // columnHeader5
+            // 
+            this.columnHeader5.Width = 115;
+            // 
             // formMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -398,6 +432,11 @@
         private System.Windows.Forms.Label labelFadeOUT;
         private System.Windows.Forms.CheckBox checkBoxFadeIN;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.ColumnHeader columnHeader2;
+        private System.Windows.Forms.ColumnHeader columnHeader3;
+        private System.Windows.Forms.ColumnHeader columnHeader4;
+        private System.Windows.Forms.ColumnHeader columnHeader5;
     }
 }
 

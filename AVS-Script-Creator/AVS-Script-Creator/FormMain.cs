@@ -15,6 +15,7 @@ namespace AVS_Script_Creator
     {
 
         private int windowsPlayerStatus;
+        
 
         public formMain()
         {
@@ -37,9 +38,30 @@ namespace AVS_Script_Creator
             formSettings.TopMost = true;
         }
 
-        private void initListViewQueue()
+        private void ListViewOwnder()
         {
-            
+            listViewQueue.View = View.Details;
+            listViewQueue.GridLines = true;
+            listViewQueue.FullRowSelect = true;
+
+            listViewQueue.Columns.Add("File", 100);
+            listViewQueue.Columns.Add("File", 100);
+            listViewQueue.Columns.Add("File", 100);
+
+            //Add items in the listview
+            string[] arr = new string[4];
+            ListViewItem itm;
+
+            //Add first item
+            arr[0] = "product_1";
+            arr[1] = "100";
+            arr[2] = "10";
+            itm = new ListViewItem(arr);
+            listViewQueue.Items.Add(itm);
+
+
+            listViewQueue.OwnerDraw = true;
+
         }
 
         private void initResizeComboBox()
