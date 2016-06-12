@@ -13,11 +13,17 @@ namespace AVS_Script_Creator
 {
     public partial class formMain : Form
     {
+
+        private int windowsPlayerStatus;
+
         public formMain()
         {
             InitializeComponent();
             initResizeComboBox();
-            
+
+            // Add a delegate for the PlayStateChange event.
+            windowsMediaPlayer.PlayStateChange += new AxWMPLib._WMPOCXEvents_PlayStateChangeEventHandler(windowsMediaPlayer_PlayStateChange);
+            windowsMediaPlayer.settings.autoStart = false;
         }
 
         private void menüToolStripMenuItem_Click(object sender, EventArgs e)
@@ -63,6 +69,9 @@ namespace AVS_Script_Creator
                         using (myStream)
                         {
                             this.textBoxVideo.Text = openFileDialog1.FileName.ToString();
+                            windowsMediaPlayer.URL = openFileDialog1.FileName;
+                            buttonTrimAddStartFrame.Enabled = true;
+                            buttonTrimAddEndFrame.Enabled = true;
                         }
                     }
                 }
@@ -72,6 +81,81 @@ namespace AVS_Script_Creator
                 }
             }
 
+        }
+      
+        private void windowsMediaPlayer_PlayStateChange(object sender, AxWMPLib._WMPOCXEvents_PlayStateChangeEvent e)
+        {
+            // Test the current state of the player and display a message for each state.
+            switch (e.newState)
+            {
+                case 0:    // Undefined
+                    windowsPlayerStatus = e.newState;
+                    break;
+
+                case 1:    // Stopped
+                    windowsPlayerStatus = e.newState;
+                    break;
+
+                case 2:    // Paused
+                    windowsPlayerStatus = e.newState;
+                    break;
+
+                case 3:    // Playing
+                    windowsPlayerStatus = e.newState;
+                    break;
+
+                case 4:    // ScanForward
+                    windowsPlayerStatus = e.newState;
+                    break;
+
+                case 5:    // ScanReverse
+                    windowsPlayerStatus = e.newState;
+                    break;
+
+                case 6:    // Buffering
+                    windowsPlayerStatus = e.newState;
+                    break;
+
+                case 7:    // Waiting
+                    windowsPlayerStatus = e.newState;
+                    break;
+
+                case 8:    // MediaEnded
+                    windowsPlayerStatus = e.newState;
+                    break;
+
+                case 9:    // Transitioning
+                    windowsPlayerStatus = e.newState;
+                    break;
+
+                case 10:   // Ready
+                    windowsPlayerStatus = e.newState;
+                    break;
+
+                case 11:   // Reconnecting
+                    windowsPlayerStatus = e.newState;
+                    break;
+
+                case 12:   // Last
+                    windowsPlayerStatus = e.newState;
+                    break;
+
+                default:
+                    windowsPlayerStatus = e.newState;
+                    break;
+            }
+        }
+
+        private void buttonTrimAddStartFrame_Click(object sender, EventArgs e)
+        {
+            int frameRate = (Convert.ToInt32(windowsMediaPlayer.currentMedia.getItemInfoByAtom(398)) / 1000);          
+            numericUpDownTrimStart.Value = Convert.ToDecimal(windowsMediaPlayer.Ctlcontrols.currentPosition) * frameRate ;
+        }
+
+        private void buttonTrimAddEndFrame_Click(object sender, EventArgs e)
+        {
+            int frameRate = (Convert.ToInt32(windowsMediaPlayer.currentMedia.getItemInfoByAtom(398)) / 1000);
+            numericUpDownTrimEnd.Value = Convert.ToDecimal(windowsMediaPlayer.Ctlcontrols.currentPosition) * frameRate;
         }
     }
 }

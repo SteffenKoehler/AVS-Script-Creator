@@ -8,3 +8,8 @@ E:\Bibliothek\Dokumente\GitHub\cSharpProjects\AVS-Script-Creator\AVS-Script-Crea
 E:\Bibliothek\Dokumente\GitHub\cSharpProjects\AVS-Script-Creator\AVS-Script-Creator\AVS-Script-Creator\obj\Debug\AVS-Script-Creator.exe
 E:\Bibliothek\Dokumente\GitHub\cSharpProjects\AVS-Script-Creator\AVS-Script-Creator\AVS-Script-Creator\obj\Debug\AVS-Script-Creator.pdb
 E:\Bibliothek\Dokumente\GitHub\cSharpProjects\AVS-Script-Creator\AVS-Script-Creator\AVS-Script-Creator\obj\Debug\AVS_Script_Creator.FormSettings.resources
+E:\Bibliothek\Dokumente\GitHub\cSharpProjects\AVS-Script-Creator\AVS-Script-Creator\AVS-Script-Creator\bin\Debug\Interop.WMPLib.dll
+E:\Bibliothek\Dokumente\GitHub\cSharpProjects\AVS-Script-Creator\AVS-Script-Creator\AVS-Script-Creator\bin\Debug\AxInterop.WMPLib.dll
+E:\Bibliothek\Dokumente\GitHub\cSharpProjects\AVS-Script-Creator\AVS-Script-Creator\AVS-Script-Creator\obj\Debug\Interop.WMPLib.dll
+E:\Bibliothek\Dokumente\GitHub\cSharpProjects\AVS-Script-Creator\AVS-Script-Creator\AVS-Script-Creator\obj\Debug\AxInterop.WMPLib.dll
+E:\Bibliothek\Dokumente\GitHub\cSharpProjects\AVS-Script-Creator\AVS-Script-Creator\AVS-Script-Creator\obj\Debug\AVS-Script-Creator.csproj.ResolveComReference.cache
