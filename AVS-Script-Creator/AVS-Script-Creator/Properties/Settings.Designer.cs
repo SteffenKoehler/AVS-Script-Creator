@@ -37,7 +37,7 @@ namespace AVS_Script_Creator.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("C:\\")]
         public string AVSOutput {
             get {
                 return ((string)(this["AVSOutput"]));

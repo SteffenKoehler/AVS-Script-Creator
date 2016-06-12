@@ -35,7 +35,13 @@
             this.labelVideo = new System.Windows.Forms.Label();
             this.openFileDialogVideo = new System.Windows.Forms.OpenFileDialog();
             this.buttonOpenVideo = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.checkBoxTrim = new System.Windows.Forms.CheckBox();
+            this.numericUpDownTrimEnd = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDownTrimStart = new System.Windows.Forms.NumericUpDown();
             this.menuStrip.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownTrimEnd)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownTrimStart)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip
@@ -93,11 +99,57 @@
             this.buttonOpenVideo.UseVisualStyleBackColor = true;
             this.buttonOpenVideo.Click += new System.EventHandler(this.buttonOpenVideo_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(12, 114);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(30, 13);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "Trim:";
+            // 
+            // checkBoxTrim
+            // 
+            this.checkBoxTrim.AutoSize = true;
+            this.checkBoxTrim.Location = new System.Drawing.Point(52, 114);
+            this.checkBoxTrim.Name = "checkBoxTrim";
+            this.checkBoxTrim.Size = new System.Drawing.Size(15, 14);
+            this.checkBoxTrim.TabIndex = 7;
+            this.checkBoxTrim.UseVisualStyleBackColor = true;
+            // 
+            // numericUpDownTrimEnd
+            // 
+            this.numericUpDownTrimEnd.Location = new System.Drawing.Point(237, 112);
+            this.numericUpDownTrimEnd.Maximum = new decimal(new int[] {
+            1215752191,
+            23,
+            0,
+            0});
+            this.numericUpDownTrimEnd.Name = "numericUpDownTrimEnd";
+            this.numericUpDownTrimEnd.Size = new System.Drawing.Size(120, 20);
+            this.numericUpDownTrimEnd.TabIndex = 8;
+            // 
+            // numericUpDownTrimStart
+            // 
+            this.numericUpDownTrimStart.Location = new System.Drawing.Point(90, 112);
+            this.numericUpDownTrimStart.Maximum = new decimal(new int[] {
+            1215752191,
+            23,
+            0,
+            0});
+            this.numericUpDownTrimStart.Name = "numericUpDownTrimStart";
+            this.numericUpDownTrimStart.Size = new System.Drawing.Size(120, 20);
+            this.numericUpDownTrimStart.TabIndex = 9;
+            // 
             // formMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1229, 509);
+            this.Controls.Add(this.numericUpDownTrimStart);
+            this.Controls.Add(this.numericUpDownTrimEnd);
+            this.Controls.Add(this.checkBoxTrim);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.buttonOpenVideo);
             this.Controls.Add(this.labelVideo);
             this.Controls.Add(this.textBoxVideo);
@@ -107,6 +159,8 @@
             this.Text = "AVS Script Creator";
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownTrimEnd)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownTrimStart)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -121,6 +175,10 @@
         private System.Windows.Forms.Label labelVideo;
         private System.Windows.Forms.OpenFileDialog openFileDialogVideo;
         private System.Windows.Forms.Button buttonOpenVideo;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.CheckBox checkBoxTrim;
+        private System.Windows.Forms.NumericUpDown numericUpDownTrimEnd;
+        private System.Windows.Forms.NumericUpDown numericUpDownTrimStart;
     }
 }
 

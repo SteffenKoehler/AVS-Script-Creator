@@ -16,6 +16,7 @@ namespace AVS_Script_Creator
         public formMain()
         {
             InitializeComponent();
+           
         }
 
         private void menüToolStripMenuItem_Click(object sender, EventArgs e)
