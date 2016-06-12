@@ -24,6 +24,13 @@ namespace AVS_Script_Creator
             this.Close();
         }
 
+        private void buttonSave_Click(object sender, EventArgs e)
+        {
+            Properties.Settings.Default.VideoDefaultPath = textBoxVideoDefaultPath.Text;
+            Properties.Settings.Default.Save();
+            this.Close();
+        }
+
         private void buttonDefaultVideoDirection_Click(object sender, EventArgs e)
         {
             FolderBrowserDialog folderBrowserDialog1 = new FolderBrowserDialog();
