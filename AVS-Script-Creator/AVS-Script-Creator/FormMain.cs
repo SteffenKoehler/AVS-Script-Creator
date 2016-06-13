@@ -178,13 +178,17 @@ namespace AVS_Script_Creator
             if (checkBoxFadeIn.Checked)
             {
                 strFade = "FadeIn";
-            } else if (checkBoxFadeOut.Checked)
+            }
+            else if (checkBoxFadeOut.Checked)
             {
                 strFade = "FadeOut";
-            } else if (checkBoxFadeInOut.Checked)
+            }
+            else if (checkBoxFadeInOut.Checked)
             {
                 strFade = "FadeInOut";
             }
+
+
 
             ListViewItem lvi = new ListViewItem(textBoxVideo.Text);
             lvi.SubItems.Add(strTrim);
@@ -197,6 +201,40 @@ namespace AVS_Script_Creator
 
         private void buttonClear_Click(object sender, EventArgs e)
         {
+
+            Filesave fileSave = new Filesave();
+            fileSave.videoInput = textBoxVideo.Text.ToString();
+
+            fileSave.isTrimChecked = checkBoxTrim.Checked;
+            decimal[] trimArray = new decimal[2];
+            trimArray[0] = numericUpDownTrimStart.Value;
+            trimArray[1] = numericUpDownTrimEnd.Value;
+            fileSave.trim = trimArray;
+
+            fileSave.isResizeChecked = checkBoxResize.Checked;
+            fileSave.resize = comboBoxResize.Text.ToString();
+
+            if (checkBoxFadeIn.Checked)
+            {
+                fileSave.isFadeChecked = true;
+                fileSave.fade = "FadeIn2(30, fps = 30)";
+            } else if (checkBoxFadeOut.Checked)
+            {
+                fileSave.isFadeChecked = true;
+                fileSave.fade = "FadeOut2(30, fps = 30)";
+            } else if (checkBoxFadeInOut.Checked)
+            {
+                fileSave.isFadeChecked = true;
+                fileSave.fade = "FadeIO2(30, fps = 30)";
+            }
+            
+             
+
+            
+
+
+
+            
 
             string output = Properties.Settings.Default.AVSOutput.ToString() + "\\";
             string path = @output + "test.avs";
@@ -228,5 +266,7 @@ namespace AVS_Script_Creator
                 }
             }
         }
+
+       
     }
 }
