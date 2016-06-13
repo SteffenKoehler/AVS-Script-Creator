@@ -185,7 +185,7 @@ namespace AVS_Script_Creator
             }
             else if (checkBoxFadeInOut.Checked)
             {
-                strFade = "FadeInOut";
+                strFade = "FadeIO";
             }
 
 
@@ -201,72 +201,22 @@ namespace AVS_Script_Creator
 
         private void buttonClear_Click(object sender, EventArgs e)
         {
-
-            Filesave fileSave = new Filesave();
-            fileSave.videoInput = textBoxVideo.Text.ToString();
-
-            fileSave.isTrimChecked = checkBoxTrim.Checked;
-            decimal[] trimArray = new decimal[2];
-            trimArray[0] = numericUpDownTrimStart.Value;
-            trimArray[1] = numericUpDownTrimEnd.Value;
-            fileSave.trim = trimArray;
-
-            fileSave.isResizeChecked = checkBoxResize.Checked;
-            fileSave.resize = comboBoxResize.Text.ToString();
-
-            if (checkBoxFadeIn.Checked)
-            {
-                fileSave.isFadeChecked = true;
-                fileSave.fade = "FadeIn2(30, fps = 30)";
-            } else if (checkBoxFadeOut.Checked)
-            {
-                fileSave.isFadeChecked = true;
-                fileSave.fade = "FadeOut2(30, fps = 30)";
-            } else if (checkBoxFadeInOut.Checked)
-            {
-                fileSave.isFadeChecked = true;
-                fileSave.fade = "FadeIO2(30, fps = 30)";
-            }
             
-             
-
-            
-
-
-
-            
-
-            string output = Properties.Settings.Default.AVSOutput.ToString() + "\\";
-            string path = @output + "test.avs";
-
-
-            
-
-
-
-
-
-
-
-
-            if (!File.Exists(path))
-            {
-                // Create a file to write to.
-                using (StreamWriter sw = File.CreateText(path))
-                {
-                    sw.WriteLine("#Created with AVS-Script-Creator by Steffen Köhler");
-                    sw.WriteLine("LoadPlugin('E:\\Software\\AviSynth 2.5\\plugins\\TransAll.dll')");
-                    sw.WriteLine("LoadPlugin('E:\\Software\\SagaraS Scriptmaker\\Plugins\\SplineResize.dll')");
-                    sw.WriteLine("clip = AVISource('A:\\Watch Dogs 3.avi', audio = false).AssumeFPS(30, 1).ConvertToYV12()");
-                    sw.WriteLine("clip = AudioDub(clip1, WAVSource('A:\\Watch Dogs 3.wav'))");
-                    sw.WriteLine("clip = Trim(clip1, 0, 50167)");
-                    sw.WriteLine("clip.Spline100Resize(2080, 1170)");
-                    sw.WriteLine("clip.FadeIO2(30, fps = 30)");
-                   
-                }
-            }
         }
 
-       
+        private void buttonCreateFiles_Click(object sender, EventArgs e)
+        {
+            foreach (ListViewItem itemRow in listViewQueue.Items)
+            {
+                Filesave fileSave = new Filesave();
+                fileSave.number = itemRow.Index + 1;
+                fileSave.videoInput = itemRow.SubItems[0].Text.ToString();
+                fileSave.trim = itemRow.SubItems[1].Text.ToString();
+                fileSave.resize = itemRow.SubItems[2].Text.ToString();
+                fileSave.fade = itemRow.SubItems[3].Text.ToString();
+
+                fileSave.save();
+            }
+        }
     }
 }

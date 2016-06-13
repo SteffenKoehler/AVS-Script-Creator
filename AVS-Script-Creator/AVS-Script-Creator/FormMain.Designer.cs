@@ -62,6 +62,7 @@
             this.checkBoxFadeInOut = new System.Windows.Forms.CheckBox();
             this.labelFadeINOUT = new System.Windows.Forms.Label();
             this.labelFadeOUT = new System.Windows.Forms.Label();
+            this.buttonCreateFiles = new System.Windows.Forms.Button();
             this.menuStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownTrimEnd)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownTrimStart)).BeginInit();
@@ -92,7 +93,7 @@
             // 
             this.textBoxVideo.Location = new System.Drawing.Point(60, 14);
             this.textBoxVideo.Name = "textBoxVideo";
-            this.textBoxVideo.Size = new System.Drawing.Size(305, 20);
+            this.textBoxVideo.Size = new System.Drawing.Size(273, 20);
             this.textBoxVideo.TabIndex = 3;
             // 
             // labelVideo
@@ -110,7 +111,7 @@
             // 
             // buttonOpenVideo
             // 
-            this.buttonOpenVideo.Location = new System.Drawing.Point(371, 12);
+            this.buttonOpenVideo.Location = new System.Drawing.Point(339, 12);
             this.buttonOpenVideo.Name = "buttonOpenVideo";
             this.buttonOpenVideo.Size = new System.Drawing.Size(26, 23);
             this.buttonOpenVideo.TabIndex = 5;
@@ -279,6 +280,7 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.buttonCreateFiles);
             this.tabPage2.Controls.Add(this.listViewQueue);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
@@ -385,6 +387,16 @@
             this.labelFadeOUT.TabIndex = 18;
             this.labelFadeOUT.Text = "FadeOUT:";
             // 
+            // buttonCreateFiles
+            // 
+            this.buttonCreateFiles.Location = new System.Drawing.Point(677, 382);
+            this.buttonCreateFiles.Name = "buttonCreateFiles";
+            this.buttonCreateFiles.Size = new System.Drawing.Size(75, 23);
+            this.buttonCreateFiles.TabIndex = 1;
+            this.buttonCreateFiles.Text = "Create files";
+            this.buttonCreateFiles.UseVisualStyleBackColor = true;
+            this.buttonCreateFiles.Click += new System.EventHandler(this.buttonCreateFiles_Click);
+            // 
             // formMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -445,6 +457,7 @@
         private System.Windows.Forms.Label labelFadeOUT;
         private System.Windows.Forms.CheckBox checkBoxFadeIn;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button buttonCreateFiles;
     }
 }
 
