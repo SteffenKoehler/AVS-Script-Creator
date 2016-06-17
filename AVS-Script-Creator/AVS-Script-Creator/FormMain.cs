@@ -23,7 +23,7 @@ namespace AVS_Script_Creator
             initResizeComboBox();
 
             tabPage1.Text = "Create AVS";
-            tabPage2.Text = "Queue";
+            tabPage2.Text = "Queue (" + listViewQueue.Items.Count +")" ;
 
 
             // Add a delegate for the PlayStateChange event.
@@ -197,6 +197,8 @@ namespace AVS_Script_Creator
             lvi.SubItems.Add(strOutput);
 
             listViewQueue.Items.Add(lvi);
+
+            tabPage2.Text = "Queue (" + listViewQueue.Items.Count + ")";
         }
 
         private void buttonClear_Click(object sender, EventArgs e)
