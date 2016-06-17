@@ -217,7 +217,7 @@ namespace AVS_Script_Creator
                 fileSave.resize = itemRow.SubItems[2].Text.ToString();
                 fileSave.fade = itemRow.SubItems[3].Text.ToString();
 
-                fileSave.save();
+                fileSave.save(); 
             }
         }
     }
