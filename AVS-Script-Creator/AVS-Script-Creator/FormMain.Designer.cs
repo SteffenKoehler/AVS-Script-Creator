@@ -49,20 +49,20 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.buttonClear = new System.Windows.Forms.Button();
             this.buttonAddToQueue = new System.Windows.Forms.Button();
+            this.checkBoxFadeInOut = new System.Windows.Forms.CheckBox();
+            this.labelFadeINOUT = new System.Windows.Forms.Label();
+            this.checkBoxFadeOut = new System.Windows.Forms.CheckBox();
+            this.labelFadeOUT = new System.Windows.Forms.Label();
+            this.checkBoxFadeIn = new System.Windows.Forms.CheckBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.buttonCreateFiles = new System.Windows.Forms.Button();
             this.listViewQueue = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.label2 = new System.Windows.Forms.Label();
-            this.checkBoxFadeIn = new System.Windows.Forms.CheckBox();
-            this.checkBoxFadeOut = new System.Windows.Forms.CheckBox();
-            this.checkBoxFadeInOut = new System.Windows.Forms.CheckBox();
-            this.labelFadeINOUT = new System.Windows.Forms.Label();
-            this.labelFadeOUT = new System.Windows.Forms.Label();
-            this.buttonCreateFiles = new System.Windows.Forms.Button();
             this.menuStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownTrimEnd)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownTrimStart)).BeginInit();
@@ -74,34 +74,38 @@
             // 
             // menuStrip
             // 
+            this.menuStrip.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.menüToolStripMenuItem});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
-            this.menuStrip.Size = new System.Drawing.Size(947, 24);
+            this.menuStrip.Padding = new System.Windows.Forms.Padding(9, 3, 0, 3);
+            this.menuStrip.Size = new System.Drawing.Size(1420, 35);
             this.menuStrip.TabIndex = 1;
             this.menuStrip.Text = "menuStrip";
             // 
             // menüToolStripMenuItem
             // 
             this.menüToolStripMenuItem.Name = "menüToolStripMenuItem";
-            this.menüToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
+            this.menüToolStripMenuItem.Size = new System.Drawing.Size(88, 29);
             this.menüToolStripMenuItem.Text = "Settings";
             this.menüToolStripMenuItem.Click += new System.EventHandler(this.menüToolStripMenuItem_Click);
             // 
             // textBoxVideo
             // 
-            this.textBoxVideo.Location = new System.Drawing.Point(60, 14);
+            this.textBoxVideo.Location = new System.Drawing.Point(90, 22);
+            this.textBoxVideo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textBoxVideo.Name = "textBoxVideo";
-            this.textBoxVideo.Size = new System.Drawing.Size(273, 20);
-            this.textBoxVideo.TabIndex = 3;
+            this.textBoxVideo.Size = new System.Drawing.Size(408, 26);
+            this.textBoxVideo.TabIndex = 0;
             // 
             // labelVideo
             // 
             this.labelVideo.AutoSize = true;
-            this.labelVideo.Location = new System.Drawing.Point(9, 17);
+            this.labelVideo.Location = new System.Drawing.Point(14, 26);
+            this.labelVideo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelVideo.Name = "labelVideo";
-            this.labelVideo.Size = new System.Drawing.Size(37, 13);
+            this.labelVideo.Size = new System.Drawing.Size(54, 20);
             this.labelVideo.TabIndex = 4;
             this.labelVideo.Text = "Video:";
             // 
@@ -111,9 +115,10 @@
             // 
             // buttonOpenVideo
             // 
-            this.buttonOpenVideo.Location = new System.Drawing.Point(339, 12);
+            this.buttonOpenVideo.Location = new System.Drawing.Point(508, 18);
+            this.buttonOpenVideo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.buttonOpenVideo.Name = "buttonOpenVideo";
-            this.buttonOpenVideo.Size = new System.Drawing.Size(26, 23);
+            this.buttonOpenVideo.Size = new System.Drawing.Size(39, 35);
             this.buttonOpenVideo.TabIndex = 5;
             this.buttonOpenVideo.Text = "...";
             this.buttonOpenVideo.UseVisualStyleBackColor = true;
@@ -122,74 +127,82 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(9, 59);
+            this.label1.Location = new System.Drawing.Point(14, 91);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(30, 13);
+            this.label1.Size = new System.Drawing.Size(43, 20);
             this.label1.TabIndex = 6;
             this.label1.Text = "Trim:";
             // 
             // checkBoxTrim
             // 
             this.checkBoxTrim.AutoSize = true;
-            this.checkBoxTrim.Location = new System.Drawing.Point(60, 59);
+            this.checkBoxTrim.Location = new System.Drawing.Point(90, 91);
+            this.checkBoxTrim.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.checkBoxTrim.Name = "checkBoxTrim";
-            this.checkBoxTrim.Size = new System.Drawing.Size(15, 14);
-            this.checkBoxTrim.TabIndex = 7;
+            this.checkBoxTrim.Size = new System.Drawing.Size(22, 21);
+            this.checkBoxTrim.TabIndex = 1;
             this.checkBoxTrim.UseVisualStyleBackColor = true;
             // 
             // numericUpDownTrimEnd
             // 
-            this.numericUpDownTrimEnd.Location = new System.Drawing.Point(245, 57);
+            this.numericUpDownTrimEnd.Location = new System.Drawing.Point(368, 88);
+            this.numericUpDownTrimEnd.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.numericUpDownTrimEnd.Maximum = new decimal(new int[] {
             1215752191,
             23,
             0,
             0});
             this.numericUpDownTrimEnd.Name = "numericUpDownTrimEnd";
-            this.numericUpDownTrimEnd.Size = new System.Drawing.Size(120, 20);
-            this.numericUpDownTrimEnd.TabIndex = 8;
+            this.numericUpDownTrimEnd.Size = new System.Drawing.Size(180, 26);
+            this.numericUpDownTrimEnd.TabIndex = 3;
             // 
             // numericUpDownTrimStart
             // 
-            this.numericUpDownTrimStart.Location = new System.Drawing.Point(98, 57);
+            this.numericUpDownTrimStart.Location = new System.Drawing.Point(147, 88);
+            this.numericUpDownTrimStart.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.numericUpDownTrimStart.Maximum = new decimal(new int[] {
             1215752191,
             23,
             0,
             0});
             this.numericUpDownTrimStart.Name = "numericUpDownTrimStart";
-            this.numericUpDownTrimStart.Size = new System.Drawing.Size(120, 20);
-            this.numericUpDownTrimStart.TabIndex = 9;
+            this.numericUpDownTrimStart.Size = new System.Drawing.Size(180, 26);
+            this.numericUpDownTrimStart.TabIndex = 2;
             // 
             // comboBoxResize
             // 
-            this.comboBoxResize.Location = new System.Drawing.Point(98, 127);
+            this.comboBoxResize.Location = new System.Drawing.Point(147, 195);
+            this.comboBoxResize.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.comboBoxResize.Name = "comboBoxResize";
-            this.comboBoxResize.Size = new System.Drawing.Size(267, 21);
-            this.comboBoxResize.TabIndex = 10;
+            this.comboBoxResize.Size = new System.Drawing.Size(398, 28);
+            this.comboBoxResize.TabIndex = 5;
             // 
             // labelResize
             // 
             this.labelResize.AutoSize = true;
-            this.labelResize.Location = new System.Drawing.Point(9, 130);
+            this.labelResize.Location = new System.Drawing.Point(14, 200);
+            this.labelResize.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelResize.Name = "labelResize";
-            this.labelResize.Size = new System.Drawing.Size(42, 13);
+            this.labelResize.Size = new System.Drawing.Size(62, 20);
             this.labelResize.TabIndex = 11;
             this.labelResize.Text = "Resize:";
             // 
             // checkBoxResize
             // 
             this.checkBoxResize.AutoSize = true;
-            this.checkBoxResize.Location = new System.Drawing.Point(60, 130);
+            this.checkBoxResize.Location = new System.Drawing.Point(90, 200);
+            this.checkBoxResize.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.checkBoxResize.Name = "checkBoxResize";
-            this.checkBoxResize.Size = new System.Drawing.Size(15, 14);
-            this.checkBoxResize.TabIndex = 12;
+            this.checkBoxResize.Size = new System.Drawing.Size(22, 21);
+            this.checkBoxResize.TabIndex = 4;
             this.checkBoxResize.UseVisualStyleBackColor = true;
             // 
             // windowsMediaPlayer
             // 
             this.windowsMediaPlayer.Enabled = true;
             this.windowsMediaPlayer.Location = new System.Drawing.Point(409, 7);
+            this.windowsMediaPlayer.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.windowsMediaPlayer.Name = "windowsMediaPlayer";
             this.windowsMediaPlayer.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("windowsMediaPlayer.OcxState")));
             this.windowsMediaPlayer.Size = new System.Drawing.Size(503, 415);
@@ -198,9 +211,10 @@
             // buttonTrimAddStartFrame
             // 
             this.buttonTrimAddStartFrame.Enabled = false;
-            this.buttonTrimAddStartFrame.Location = new System.Drawing.Point(98, 83);
+            this.buttonTrimAddStartFrame.Location = new System.Drawing.Point(147, 128);
+            this.buttonTrimAddStartFrame.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.buttonTrimAddStartFrame.Name = "buttonTrimAddStartFrame";
-            this.buttonTrimAddStartFrame.Size = new System.Drawing.Size(120, 23);
+            this.buttonTrimAddStartFrame.Size = new System.Drawing.Size(180, 35);
             this.buttonTrimAddStartFrame.TabIndex = 14;
             this.buttonTrimAddStartFrame.Text = "Add current frame";
             this.buttonTrimAddStartFrame.UseVisualStyleBackColor = true;
@@ -209,9 +223,10 @@
             // buttonTrimAddEndFrame
             // 
             this.buttonTrimAddEndFrame.Enabled = false;
-            this.buttonTrimAddEndFrame.Location = new System.Drawing.Point(245, 83);
+            this.buttonTrimAddEndFrame.Location = new System.Drawing.Point(368, 128);
+            this.buttonTrimAddEndFrame.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.buttonTrimAddEndFrame.Name = "buttonTrimAddEndFrame";
-            this.buttonTrimAddEndFrame.Size = new System.Drawing.Size(120, 23);
+            this.buttonTrimAddEndFrame.Size = new System.Drawing.Size(180, 35);
             this.buttonTrimAddEndFrame.TabIndex = 15;
             this.buttonTrimAddEndFrame.Text = "Add current frame";
             this.buttonTrimAddEndFrame.UseVisualStyleBackColor = true;
@@ -221,10 +236,11 @@
             // 
             this.tabControl.Controls.Add(this.tabPage1);
             this.tabControl.Controls.Add(this.tabPage2);
-            this.tabControl.Location = new System.Drawing.Point(12, 27);
+            this.tabControl.Location = new System.Drawing.Point(18, 42);
+            this.tabControl.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
-            this.tabControl.Size = new System.Drawing.Size(923, 454);
+            this.tabControl.Size = new System.Drawing.Size(1384, 698);
             this.tabControl.TabIndex = 16;
             // 
             // tabPage1
@@ -250,19 +266,21 @@
             this.tabPage1.Controls.Add(this.label1);
             this.tabPage1.Controls.Add(this.numericUpDownTrimEnd);
             this.tabPage1.Controls.Add(this.checkBoxTrim);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Location = new System.Drawing.Point(4, 29);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(915, 428);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tabPage1.Size = new System.Drawing.Size(1376, 665);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "tabPage1";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // buttonClear
             // 
-            this.buttonClear.Location = new System.Drawing.Point(60, 352);
+            this.buttonClear.Location = new System.Drawing.Point(90, 542);
+            this.buttonClear.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.buttonClear.Name = "buttonClear";
-            this.buttonClear.Size = new System.Drawing.Size(84, 23);
+            this.buttonClear.Size = new System.Drawing.Size(126, 35);
             this.buttonClear.TabIndex = 23;
             this.buttonClear.Text = "Clear";
             this.buttonClear.UseVisualStyleBackColor = true;
@@ -270,25 +288,98 @@
             // 
             // buttonAddToQueue
             // 
-            this.buttonAddToQueue.Location = new System.Drawing.Point(281, 352);
+            this.buttonAddToQueue.Location = new System.Drawing.Point(422, 542);
+            this.buttonAddToQueue.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.buttonAddToQueue.Name = "buttonAddToQueue";
-            this.buttonAddToQueue.Size = new System.Drawing.Size(84, 23);
+            this.buttonAddToQueue.Size = new System.Drawing.Size(126, 35);
             this.buttonAddToQueue.TabIndex = 22;
             this.buttonAddToQueue.Text = "Add to queue";
             this.buttonAddToQueue.UseVisualStyleBackColor = true;
             this.buttonAddToQueue.Click += new System.EventHandler(this.buttonAddToQueue_Click);
             // 
+            // checkBoxFadeInOut
+            // 
+            this.checkBoxFadeInOut.AutoSize = true;
+            this.checkBoxFadeInOut.Location = new System.Drawing.Point(438, 260);
+            this.checkBoxFadeInOut.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.checkBoxFadeInOut.Name = "checkBoxFadeInOut";
+            this.checkBoxFadeInOut.Size = new System.Drawing.Size(22, 21);
+            this.checkBoxFadeInOut.TabIndex = 8;
+            this.checkBoxFadeInOut.UseVisualStyleBackColor = true;
+            // 
+            // labelFadeINOUT
+            // 
+            this.labelFadeINOUT.AutoSize = true;
+            this.labelFadeINOUT.Location = new System.Drawing.Point(320, 260);
+            this.labelFadeINOUT.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelFadeINOUT.Name = "labelFadeINOUT";
+            this.labelFadeINOUT.Size = new System.Drawing.Size(103, 20);
+            this.labelFadeINOUT.TabIndex = 20;
+            this.labelFadeINOUT.Text = "FadeIN/OUT:";
+            // 
+            // checkBoxFadeOut
+            // 
+            this.checkBoxFadeOut.AutoSize = true;
+            this.checkBoxFadeOut.Location = new System.Drawing.Point(261, 260);
+            this.checkBoxFadeOut.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.checkBoxFadeOut.Name = "checkBoxFadeOut";
+            this.checkBoxFadeOut.Size = new System.Drawing.Size(22, 21);
+            this.checkBoxFadeOut.TabIndex = 7;
+            this.checkBoxFadeOut.UseVisualStyleBackColor = true;
+            // 
+            // labelFadeOUT
+            // 
+            this.labelFadeOUT.AutoSize = true;
+            this.labelFadeOUT.Location = new System.Drawing.Point(166, 262);
+            this.labelFadeOUT.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelFadeOUT.Name = "labelFadeOUT";
+            this.labelFadeOUT.Size = new System.Drawing.Size(83, 20);
+            this.labelFadeOUT.TabIndex = 18;
+            this.labelFadeOUT.Text = "FadeOUT:";
+            // 
+            // checkBoxFadeIn
+            // 
+            this.checkBoxFadeIn.AutoSize = true;
+            this.checkBoxFadeIn.Location = new System.Drawing.Point(90, 262);
+            this.checkBoxFadeIn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.checkBoxFadeIn.Name = "checkBoxFadeIn";
+            this.checkBoxFadeIn.Size = new System.Drawing.Size(22, 21);
+            this.checkBoxFadeIn.TabIndex = 6;
+            this.checkBoxFadeIn.UseVisualStyleBackColor = true;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(14, 262);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(62, 20);
+            this.label2.TabIndex = 16;
+            this.label2.Text = "FadeIN";
+            // 
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.buttonCreateFiles);
             this.tabPage2.Controls.Add(this.listViewQueue);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Location = new System.Drawing.Point(4, 29);
+            this.tabPage2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(915, 428);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tabPage2.Size = new System.Drawing.Size(1376, 665);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // buttonCreateFiles
+            // 
+            this.buttonCreateFiles.Location = new System.Drawing.Point(1016, 588);
+            this.buttonCreateFiles.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.buttonCreateFiles.Name = "buttonCreateFiles";
+            this.buttonCreateFiles.Size = new System.Drawing.Size(112, 35);
+            this.buttonCreateFiles.TabIndex = 1;
+            this.buttonCreateFiles.Text = "Create files";
+            this.buttonCreateFiles.UseVisualStyleBackColor = true;
+            this.buttonCreateFiles.Click += new System.EventHandler(this.buttonCreateFiles_Click);
             // 
             // listViewQueue
             // 
@@ -300,10 +391,11 @@
             this.columnHeader5});
             this.listViewQueue.FullRowSelect = true;
             this.listViewQueue.GridLines = true;
-            this.listViewQueue.Location = new System.Drawing.Point(6, 6);
+            this.listViewQueue.Location = new System.Drawing.Point(9, 9);
+            this.listViewQueue.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.listViewQueue.MultiSelect = false;
             this.listViewQueue.Name = "listViewQueue";
-            this.listViewQueue.Size = new System.Drawing.Size(903, 354);
+            this.listViewQueue.Size = new System.Drawing.Size(1352, 542);
             this.listViewQueue.TabIndex = 0;
             this.listViewQueue.UseCompatibleStateImageBehavior = false;
             this.listViewQueue.View = System.Windows.Forms.View.Details;
@@ -333,79 +425,16 @@
             this.columnHeader5.Text = "Output";
             this.columnHeader5.Width = 286;
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(9, 170);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(42, 13);
-            this.label2.TabIndex = 16;
-            this.label2.Text = "FadeIN";
-            // 
-            // checkBoxFadeIn
-            // 
-            this.checkBoxFadeIn.AutoSize = true;
-            this.checkBoxFadeIn.Location = new System.Drawing.Point(60, 170);
-            this.checkBoxFadeIn.Name = "checkBoxFadeIn";
-            this.checkBoxFadeIn.Size = new System.Drawing.Size(15, 14);
-            this.checkBoxFadeIn.TabIndex = 17;
-            this.checkBoxFadeIn.UseVisualStyleBackColor = true;
-            // 
-            // checkBoxFadeOut
-            // 
-            this.checkBoxFadeOut.AutoSize = true;
-            this.checkBoxFadeOut.Location = new System.Drawing.Point(174, 169);
-            this.checkBoxFadeOut.Name = "checkBoxFadeOut";
-            this.checkBoxFadeOut.Size = new System.Drawing.Size(15, 14);
-            this.checkBoxFadeOut.TabIndex = 19;
-            this.checkBoxFadeOut.UseVisualStyleBackColor = true;
-            // 
-            // checkBoxFadeInOut
-            // 
-            this.checkBoxFadeInOut.AutoSize = true;
-            this.checkBoxFadeInOut.Location = new System.Drawing.Point(292, 169);
-            this.checkBoxFadeInOut.Name = "checkBoxFadeInOut";
-            this.checkBoxFadeInOut.Size = new System.Drawing.Size(15, 14);
-            this.checkBoxFadeInOut.TabIndex = 21;
-            this.checkBoxFadeInOut.UseVisualStyleBackColor = true;
-            // 
-            // labelFadeINOUT
-            // 
-            this.labelFadeINOUT.AutoSize = true;
-            this.labelFadeINOUT.Location = new System.Drawing.Point(213, 169);
-            this.labelFadeINOUT.Name = "labelFadeINOUT";
-            this.labelFadeINOUT.Size = new System.Drawing.Size(73, 13);
-            this.labelFadeINOUT.TabIndex = 20;
-            this.labelFadeINOUT.Text = "FadeIN/OUT:";
-            // 
-            // labelFadeOUT
-            // 
-            this.labelFadeOUT.AutoSize = true;
-            this.labelFadeOUT.Location = new System.Drawing.Point(111, 170);
-            this.labelFadeOUT.Name = "labelFadeOUT";
-            this.labelFadeOUT.Size = new System.Drawing.Size(57, 13);
-            this.labelFadeOUT.TabIndex = 18;
-            this.labelFadeOUT.Text = "FadeOUT:";
-            // 
-            // buttonCreateFiles
-            // 
-            this.buttonCreateFiles.Location = new System.Drawing.Point(677, 382);
-            this.buttonCreateFiles.Name = "buttonCreateFiles";
-            this.buttonCreateFiles.Size = new System.Drawing.Size(75, 23);
-            this.buttonCreateFiles.TabIndex = 1;
-            this.buttonCreateFiles.Text = "Create files";
-            this.buttonCreateFiles.UseVisualStyleBackColor = true;
-            this.buttonCreateFiles.Click += new System.EventHandler(this.buttonCreateFiles_Click);
-            // 
             // formMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(947, 493);
+            this.ClientSize = new System.Drawing.Size(1420, 758);
             this.Controls.Add(this.tabControl);
             this.Controls.Add(this.menuStrip);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MainMenuStrip = this.menuStrip;
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "formMain";
             this.Text = "AVS Script Creator";
             this.menuStrip.ResumeLayout(false);
