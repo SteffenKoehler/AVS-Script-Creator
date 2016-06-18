@@ -167,7 +167,7 @@ namespace AVS_Script_Creator
 
             if (checkBoxTrim.Checked)
             {
-                strTrim = numericUpDownTrimStart.Value.ToString() + ", " + numericUpDownTrimEnd.Value.ToString();
+                strTrim = Math.Round(numericUpDownTrimStart.Value).ToString() + ", " + Math.Round(numericUpDownTrimEnd.Value).ToString();
             }
 
             if (checkBoxResize.Checked)
