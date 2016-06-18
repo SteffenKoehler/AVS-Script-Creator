@@ -52,8 +52,8 @@ namespace AVS_Script_Creator
             string savePath = videoInput;
 
             savePath = savePath.Replace(".avi", "");
-            string[] tokens = savePath.Split(new[] { ":\\" }, StringSplitOptions.None);
-            savePath = tokens[1];
+            string[] tokens = savePath.Split(new[] { "\\" }, StringSplitOptions.None);
+            savePath = tokens[tokens.Length-1];
 
             string output = Properties.Settings.Default.AVSOutput.ToString() + "\\";
             string path = @output + savePath + " #" + number + ".avs";
