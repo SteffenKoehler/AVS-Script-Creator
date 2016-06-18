@@ -29,6 +29,13 @@ namespace AVS_Script_Creator
             // Add a delegate for the PlayStateChange event.
             windowsMediaPlayer.PlayStateChange += new AxWMPLib._WMPOCXEvents_PlayStateChangeEventHandler(windowsMediaPlayer_PlayStateChange);
             windowsMediaPlayer.settings.autoStart = false;
+
+
+            //Set EventHandler for numericUpDown fields
+            numericUpDownTrimStart.Enter += new EventHandler(numericUpDownTrimStart_Enter);
+            numericUpDownTrimStart.Leave += new EventHandler(numericUpDownTrimStart_Leave);
+            numericUpDownTrimEnd.Enter += new EventHandler(numericUpDownTrimEnd_Enter);
+            numericUpDownTrimEnd.Leave += new EventHandler(numericUpDownTrimEnd_Leave);
         }
 
         private void menüToolStripMenuItem_Click(object sender, EventArgs e)
@@ -218,7 +225,42 @@ namespace AVS_Script_Creator
                 fileSave.fade = itemRow.SubItems[3].Text.ToString();
                 
                 fileSave.save(); 
+
+                
             }
         }
+
+        private void numericUpDownTrimStart_Enter (object sender, EventArgs e)
+        {
+            if(numericUpDownTrimStart.Value == 0)
+            {
+                numericUpDownTrimStart.Text = "";
+            }
+        }
+
+        private void numericUpDownTrimStart_Leave(object sender, EventArgs e)
+        {
+            if(numericUpDownTrimStart.Value == 0)
+            {
+                numericUpDownTrimStart.Text = "0";
+            }
+        }
+
+        private void numericUpDownTrimEnd_Enter(object sender, EventArgs e)
+        {
+            if (numericUpDownTrimEnd.Value == 0)
+            {
+                numericUpDownTrimEnd.Text = "";
+            }
+        }
+
+        private void numericUpDownTrimEnd_Leave(object sender, EventArgs e)
+        {
+            if (numericUpDownTrimEnd.Value == 0)
+            {
+                numericUpDownTrimEnd.Text = "0";
+            }
+        }
+
     }
 }
