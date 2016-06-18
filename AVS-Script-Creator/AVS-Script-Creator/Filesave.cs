@@ -9,7 +9,7 @@ namespace AVS_Script_Creator
 {
     class Filesave
     {
-       
+
         public string videoInput { get; set; }
         public int number { get; set; }
         public string trim { get; set; }
@@ -25,6 +25,30 @@ namespace AVS_Script_Creator
 
         public void save()
         {
+           
+            if (!File.Exists(getSavePathSettings()))
+            {
+                // Create a file to write to.
+                using (StreamWriter sw = File.CreateText(getSavePathSettings()))
+                {
+                    //separator must be used to avoid AviSynth errors
+                    sw.WriteLine(credits);
+                    sw.WriteLine(pluginTransAll);
+                    sw.WriteLine(pluginSplineResize);
+                    sw.WriteLine("clip = AVISource(" + separator + videoInput + separator + ", audio = false).AssumeFPS(30, 1).ConvertToYV12()");
+                    sw.WriteLine("clip = AudioDub(clip, WAVSource(" + separator + videoInput.Replace(".avi", ".wav") + separator + "))");
+                    sw.WriteLine("clip = Trim(clip," + trim + ")");
+                    sw.WriteLine(getResizeSettings());
+                    sw.WriteLine(getFadeSettings());
+                    sw.WriteLine("clip");
+
+                }
+            }
+        }
+
+
+        private string getSavePathSettings()
+        {
             string savePath = videoInput;
 
             savePath = savePath.Replace(".avi", "");
@@ -34,33 +58,41 @@ namespace AVS_Script_Creator
             string output = Properties.Settings.Default.AVSOutput.ToString() + "\\";
             string path = @output + savePath + " #" + number + ".avs";
 
+            return path;
+        }
 
-            if(fade != "No")
+
+        private string getFadeSettings()
+        {
+            if (fade != "No")
             {
                 fade = "clip." + fade + "(30, fps = 30)";
-            } else
+            }
+            else
             {
-                fade = "#no fade added";
+                fade = "# no fade added";
+            }
+            return fade;
+        }
+
+        private string getResizeSettings()
+        {
+            if(resize != "No")
+            {
+                String[] subResize = resize.Split(':');
+
+                resize = subResize[1];
+                resize = resize.Replace(".", "");
+                resize = resize.Replace("x", ",");
+
+                resize = "clip.Spline100Resize(" + resize + ")";
+            }
+            else
+            {
+                resize = "# no resize added";
             }
 
-
-            if (!File.Exists(path))
-            {
-                // Create a file to write to.
-                using (StreamWriter sw = File.CreateText(path))
-                {
-                    sw.WriteLine(credits);
-                    sw.WriteLine(pluginTransAll);
-                    sw.WriteLine(pluginSplineResize);
-                    sw.WriteLine("clip = AVISource(" + separator + videoInput + separator + ", audio = false).AssumeFPS(30, 1).ConvertToYV12()");
-                    sw.WriteLine("clip = AudioDub(clip, WAVSource(" + separator + videoInput.Replace(".avi", ".wav" ) + separator + "))");
-                    sw.WriteLine("clip = Trim(clip, 0, 50167)");
-                    sw.WriteLine("clip.Spline100Resize(2080, 1170)");
-                    sw.WriteLine(fade);
-                    sw.WriteLine("clip");
-
-                }
-            }
+            return resize;
         }
 
     }

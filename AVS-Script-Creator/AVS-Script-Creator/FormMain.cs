@@ -203,7 +203,7 @@ namespace AVS_Script_Creator
 
         private void buttonClear_Click(object sender, EventArgs e)
         {
-            
+           
         }
 
         private void buttonCreateFiles_Click(object sender, EventArgs e)
@@ -216,7 +216,7 @@ namespace AVS_Script_Creator
                 fileSave.trim = itemRow.SubItems[1].Text.ToString();
                 fileSave.resize = itemRow.SubItems[2].Text.ToString();
                 fileSave.fade = itemRow.SubItems[3].Text.ToString();
-
+                
                 fileSave.save(); 
             }
         }
