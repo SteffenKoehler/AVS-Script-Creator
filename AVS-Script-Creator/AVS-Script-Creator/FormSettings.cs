@@ -22,6 +22,7 @@ namespace AVS_Script_Creator
         public FormSettings()
         {
             InitializeComponent();
+            initSettingsResizeComboBox();
             textBoxVideoDefaultPath.Text = Properties.Settings.Default.VideoDefaultPath.ToString();
             textBoxAVSOutput.Text = Properties.Settings.Default.AVSOutput.ToString();
 
@@ -32,6 +33,20 @@ namespace AVS_Script_Creator
             folderBrowserDialog.ShowNewFolderButton = false;
             // Default to the Desktop folder.
             folderBrowserDialog.RootFolder = System.Environment.SpecialFolder.Desktop;
+        }
+
+       
+        private void initSettingsResizeComboBox()
+        {
+            comboBoxSettingsResize.DropDownStyle = ComboBoxStyle.DropDownList;
+
+            foreach (var resizeItem in Properties.Settings.Default.ResizeValues)
+            {
+                comboBoxSettingsResize.Items.Add(resizeItem);
+            }
+
+            comboBoxSettingsResize.Text = Properties.Settings.Default.DefaultResizeValue;
+            checkBoxSettingsResize.Checked = Properties.Settings.Default.DefaultResizeBoolean;
         }
 
 
@@ -45,11 +60,26 @@ namespace AVS_Script_Creator
             Properties.Settings.Default.VideoDefaultPath = textBoxVideoDefaultPath.Text;
             Properties.Settings.Default.AVSOutput = textBoxAVSOutput.Text;
 
-
+            checkForDefaultResizeSettings();
 
             Properties.Settings.Default.Save();
             this.Close();
         }
+
+        private void checkForDefaultResizeSettings()
+        {
+            if (checkBoxSettingsResize.Checked)
+            {
+                Properties.Settings.Default.DefaultResizeBoolean = true;
+                Properties.Settings.Default.DefaultResizeValue = comboBoxSettingsResize.Text;
+            } else
+            {
+                Properties.Settings.Default.DefaultResizeBoolean = false;
+                Properties.Settings.Default.DefaultResizeValue = "No";
+            }
+        }
+
+
 
         private void buttonDefaultVideoDirection_Click(object sender, EventArgs e)
         {

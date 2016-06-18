@@ -20,10 +20,15 @@ namespace AVS_Script_Creator
         public formMain()
         {
             InitializeComponent();
+            initFormSettings();
+        }
+
+        private void initFormSettings()
+        {
             initResizeComboBox();
 
             tabPage1.Text = "Create AVS";
-            tabPage2.Text = "Queue (" + listViewQueue.Items.Count +")" ;
+            tabPage2.Text = "Queue (" + listViewQueue.Items.Count + ")";
 
 
             // Add a delegate for the PlayStateChange event.
@@ -38,15 +43,23 @@ namespace AVS_Script_Creator
             numericUpDownTrimEnd.Leave += new EventHandler(numericUpDownTrimEnd_Leave);
         }
 
+
         private void menüToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FormSettings formSettings = new FormSettings();
+            formSettings.FormClosing += new FormClosingEventHandler(this.FormSettings_FormClosing);
             formSettings.Show();
             formSettings.TopMost = true;
         }
 
+        private void FormSettings_FormClosing(object sender, EventArgs e)
+        {
+            initFormSettings();
+        }
+
         private void initResizeComboBox()
         {
+            comboBoxResize.Items.Clear();
             comboBoxResize.DropDownStyle = ComboBoxStyle.DropDownList;
             
             foreach(var resizeItem in Properties.Settings.Default.ResizeValues)
@@ -54,7 +67,8 @@ namespace AVS_Script_Creator
                 comboBoxResize.Items.Add(resizeItem);
             }
 
-            comboBoxResize.Text = "1080p: 1.920 x 1.080";
+            comboBoxResize.Text = Properties.Settings.Default.DefaultResizeValue;
+            checkBoxResize.Checked = Properties.Settings.Default.DefaultResizeBoolean;
         }
 
         private void buttonOpenVideo_Click(object sender, EventArgs e)

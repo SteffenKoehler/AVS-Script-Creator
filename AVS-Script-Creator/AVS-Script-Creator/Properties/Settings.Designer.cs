@@ -64,5 +64,29 @@ namespace AVS_Script_Creator.Properties {
                 this["ResizeValues"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool DefaultResizeBoolean {
+            get {
+                return ((bool)(this["DefaultResizeBoolean"]));
+            }
+            set {
+                this["DefaultResizeBoolean"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string DefaultResizeValue {
+            get {
+                return ((string)(this["DefaultResizeValue"]));
+            }
+            set {
+                this["DefaultResizeValue"] = value;
+            }
+        }
     }
 }
