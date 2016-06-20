@@ -284,5 +284,14 @@ namespace AVS_Script_Creator
             }
         }
 
+        private void textBoxVideoNumber_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char ch = e.KeyChar;
+
+            if(!Char.IsDigit(ch) && ch != 8)
+            {
+                e.Handled = true;
+            }
+        }
     }
 }
