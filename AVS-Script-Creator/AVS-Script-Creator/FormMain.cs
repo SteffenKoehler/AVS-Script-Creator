@@ -26,6 +26,7 @@ namespace AVS_Script_Creator
         private void initFormSettings()
         {
             initResizeComboBox();
+            initFadeCheckBox();
 
             tabPage1.Text = "Create AVS";
             tabPage2.Text = "Queue (" + listViewQueue.Items.Count + ")";
@@ -69,6 +70,13 @@ namespace AVS_Script_Creator
 
             comboBoxResize.Text = Properties.Settings.Default.DefaultResizeValue;
             checkBoxResize.Checked = Properties.Settings.Default.DefaultResizeBoolean;
+        }
+
+        private void initFadeCheckBox()
+        {
+            checkBoxFadeIn.Checked = Properties.Settings.Default.DefaultFadeIn;
+            checkBoxFadeOut.Checked = Properties.Settings.Default.DefaultFadeOut;
+            checkBoxFadeInOut.Checked = Properties.Settings.Default.DefaultFadeInOut;
         }
 
         private void buttonOpenVideo_Click(object sender, EventArgs e)

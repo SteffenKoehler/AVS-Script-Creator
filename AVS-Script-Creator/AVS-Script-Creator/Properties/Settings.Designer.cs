@@ -88,5 +88,41 @@ namespace AVS_Script_Creator.Properties {
                 this["DefaultResizeValue"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool DefaultFadeIn {
+            get {
+                return ((bool)(this["DefaultFadeIn"]));
+            }
+            set {
+                this["DefaultFadeIn"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool DefaultFadeOut {
+            get {
+                return ((bool)(this["DefaultFadeOut"]));
+            }
+            set {
+                this["DefaultFadeOut"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool DefaultFadeInOut {
+            get {
+                return ((bool)(this["DefaultFadeInOut"]));
+            }
+            set {
+                this["DefaultFadeInOut"] = value;
+            }
+        }
     }
 }

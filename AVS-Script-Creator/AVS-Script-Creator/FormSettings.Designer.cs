@@ -39,6 +39,10 @@
             this.label3 = new System.Windows.Forms.Label();
             this.checkBoxSettingsResize = new System.Windows.Forms.CheckBox();
             this.comboBoxSettingsResize = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.checkBoxSettingsFadeIn = new System.Windows.Forms.CheckBox();
+            this.checkBoxSettingsFadeOut = new System.Windows.Forms.CheckBox();
+            this.checkBoxSettingsFadeInOut = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // buttonCancel
@@ -89,7 +93,7 @@
             // 
             // buttonAVSOutput
             // 
-            this.buttonAVSOutput.Location = new System.Drawing.Point(441, 50);
+            this.buttonAVSOutput.Location = new System.Drawing.Point(441, 96);
             this.buttonAVSOutput.Name = "buttonAVSOutput";
             this.buttonAVSOutput.Size = new System.Drawing.Size(25, 23);
             this.buttonAVSOutput.TabIndex = 5;
@@ -99,7 +103,7 @@
             // 
             // textBoxAVSOutput
             // 
-            this.textBoxAVSOutput.Location = new System.Drawing.Point(132, 52);
+            this.textBoxAVSOutput.Location = new System.Drawing.Point(132, 98);
             this.textBoxAVSOutput.Name = "textBoxAVSOutput";
             this.textBoxAVSOutput.Size = new System.Drawing.Size(303, 20);
             this.textBoxAVSOutput.TabIndex = 6;
@@ -107,7 +111,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 55);
+            this.label2.Location = new System.Drawing.Point(12, 101);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(118, 13);
             this.label2.TabIndex = 7;
@@ -116,7 +120,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 83);
+            this.label3.Location = new System.Drawing.Point(12, 133);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(91, 13);
             this.label3.TabIndex = 8;
@@ -125,7 +129,7 @@
             // checkBoxSettingsResize
             // 
             this.checkBoxSettingsResize.AutoSize = true;
-            this.checkBoxSettingsResize.Location = new System.Drawing.Point(132, 83);
+            this.checkBoxSettingsResize.Location = new System.Drawing.Point(132, 133);
             this.checkBoxSettingsResize.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.checkBoxSettingsResize.Name = "checkBoxSettingsResize";
             this.checkBoxSettingsResize.Size = new System.Drawing.Size(89, 17);
@@ -136,17 +140,66 @@
             // comboBoxSettingsResize
             // 
             this.comboBoxSettingsResize.FormattingEnabled = true;
-            this.comboBoxSettingsResize.Location = new System.Drawing.Point(243, 81);
+            this.comboBoxSettingsResize.Location = new System.Drawing.Point(243, 131);
             this.comboBoxSettingsResize.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.comboBoxSettingsResize.Name = "comboBoxSettingsResize";
             this.comboBoxSettingsResize.Size = new System.Drawing.Size(192, 21);
             this.comboBoxSettingsResize.TabIndex = 10;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(12, 164);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(91, 13);
+            this.label4.TabIndex = 11;
+            this.label4.Text = "Set default resize:";
+            // 
+            // checkBoxSettingsFadeIn
+            // 
+            this.checkBoxSettingsFadeIn.AutoSize = true;
+            this.checkBoxSettingsFadeIn.Location = new System.Drawing.Point(132, 163);
+            this.checkBoxSettingsFadeIn.Margin = new System.Windows.Forms.Padding(2);
+            this.checkBoxSettingsFadeIn.Name = "checkBoxSettingsFadeIn";
+            this.checkBoxSettingsFadeIn.Size = new System.Drawing.Size(61, 17);
+            this.checkBoxSettingsFadeIn.TabIndex = 12;
+            this.checkBoxSettingsFadeIn.Text = "FadeIN";
+            this.checkBoxSettingsFadeIn.UseVisualStyleBackColor = true;
+            this.checkBoxSettingsFadeIn.CheckedChanged += new System.EventHandler(this.checkBoxSettingsFadeIn_CheckedChanged);
+            // 
+            // checkBoxSettingsFadeOut
+            // 
+            this.checkBoxSettingsFadeOut.AutoSize = true;
+            this.checkBoxSettingsFadeOut.Location = new System.Drawing.Point(232, 163);
+            this.checkBoxSettingsFadeOut.Margin = new System.Windows.Forms.Padding(2);
+            this.checkBoxSettingsFadeOut.Name = "checkBoxSettingsFadeOut";
+            this.checkBoxSettingsFadeOut.Size = new System.Drawing.Size(73, 17);
+            this.checkBoxSettingsFadeOut.TabIndex = 13;
+            this.checkBoxSettingsFadeOut.Text = "FadeOUT";
+            this.checkBoxSettingsFadeOut.UseVisualStyleBackColor = true;
+            this.checkBoxSettingsFadeOut.CheckedChanged += new System.EventHandler(this.checkBoxSettingsFadeOut_CheckedChanged);
+            // 
+            // checkBoxSettingsFadeInOut
+            // 
+            this.checkBoxSettingsFadeInOut.AutoSize = true;
+            this.checkBoxSettingsFadeInOut.Location = new System.Drawing.Point(346, 163);
+            this.checkBoxSettingsFadeInOut.Margin = new System.Windows.Forms.Padding(2);
+            this.checkBoxSettingsFadeInOut.Name = "checkBoxSettingsFadeInOut";
+            this.checkBoxSettingsFadeInOut.Size = new System.Drawing.Size(89, 17);
+            this.checkBoxSettingsFadeInOut.TabIndex = 14;
+            this.checkBoxSettingsFadeInOut.Text = "FadeIN/OUT";
+            this.checkBoxSettingsFadeInOut.UseVisualStyleBackColor = true;
+            this.checkBoxSettingsFadeInOut.CheckedChanged += new System.EventHandler(this.checkBoxSettingsFadeInOut_CheckedChanged);
             // 
             // FormSettings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(478, 261);
+            this.Controls.Add(this.checkBoxSettingsFadeInOut);
+            this.Controls.Add(this.checkBoxSettingsFadeOut);
+            this.Controls.Add(this.checkBoxSettingsFadeIn);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.comboBoxSettingsResize);
             this.Controls.Add(this.checkBoxSettingsResize);
             this.Controls.Add(this.label3);
@@ -181,5 +234,9 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.CheckBox checkBoxSettingsResize;
         private System.Windows.Forms.ComboBox comboBoxSettingsResize;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.CheckBox checkBoxSettingsFadeIn;
+        private System.Windows.Forms.CheckBox checkBoxSettingsFadeOut;
+        private System.Windows.Forms.CheckBox checkBoxSettingsFadeInOut;
     }
 }

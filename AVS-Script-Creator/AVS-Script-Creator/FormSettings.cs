@@ -23,6 +23,7 @@ namespace AVS_Script_Creator
         {
             InitializeComponent();
             initSettingsResizeComboBox();
+            initSettingsFade();
             textBoxVideoDefaultPath.Text = Properties.Settings.Default.VideoDefaultPath.ToString();
             textBoxAVSOutput.Text = Properties.Settings.Default.AVSOutput.ToString();
 
@@ -49,6 +50,13 @@ namespace AVS_Script_Creator
             checkBoxSettingsResize.Checked = Properties.Settings.Default.DefaultResizeBoolean;
         }
 
+        private void initSettingsFade()
+        {
+            checkBoxSettingsFadeIn.Checked = Properties.Settings.Default.DefaultFadeIn;
+            checkBoxSettingsFadeOut.Checked = Properties.Settings.Default.DefaultFadeOut;
+            checkBoxSettingsFadeInOut.Checked = Properties.Settings.Default.DefaultFadeInOut;
+        }
+
 
         private void buttonCancel_Click(object sender, EventArgs e)
         {
@@ -61,6 +69,7 @@ namespace AVS_Script_Creator
             Properties.Settings.Default.AVSOutput = textBoxAVSOutput.Text;
 
             checkForDefaultResizeSettings();
+            checkForDefaultFadeSettings();
 
             Properties.Settings.Default.Save();
             this.Close();
@@ -76,6 +85,31 @@ namespace AVS_Script_Creator
             {
                 Properties.Settings.Default.DefaultResizeBoolean = false;
                 Properties.Settings.Default.DefaultResizeValue = "No";
+            }
+        }
+
+        private void checkForDefaultFadeSettings()
+        {
+            if (checkBoxSettingsFadeIn.Checked)
+            {
+                Properties.Settings.Default.DefaultFadeIn = true;
+                Properties.Settings.Default.DefaultFadeOut = false;
+                Properties.Settings.Default.DefaultFadeInOut = false;
+            }
+            else if (checkBoxSettingsFadeOut.Checked){
+                Properties.Settings.Default.DefaultFadeIn = false;
+                Properties.Settings.Default.DefaultFadeOut = true;
+                Properties.Settings.Default.DefaultFadeInOut = false;
+            }
+            else if (checkBoxSettingsFadeInOut.Checked){
+                Properties.Settings.Default.DefaultFadeIn = false;
+                Properties.Settings.Default.DefaultFadeOut = false;
+                Properties.Settings.Default.DefaultFadeInOut = true;
+            }
+           else {
+                Properties.Settings.Default.DefaultFadeIn = false;
+                Properties.Settings.Default.DefaultFadeOut = false;
+                Properties.Settings.Default.DefaultFadeInOut = false;
             }
         }
 
@@ -109,6 +143,24 @@ namespace AVS_Script_Creator
                     MessageBox.Show("Error: Could not read folder from disk. Original error: " + ex.Message);
                 }
             }
+        }
+
+        private void checkBoxSettingsFadeIn_CheckedChanged(object sender, EventArgs e)
+        {
+            checkBoxSettingsFadeOut.Checked = false;
+            checkBoxSettingsFadeInOut.Checked = false;
+        }
+
+        private void checkBoxSettingsFadeOut_CheckedChanged(object sender, EventArgs e)
+        {
+            checkBoxSettingsFadeIn.Checked = false;
+            checkBoxSettingsFadeInOut.Checked = false;
+        }
+
+        private void checkBoxSettingsFadeInOut_CheckedChanged(object sender, EventArgs e)
+        {
+            checkBoxSettingsFadeIn.Checked = false;
+            checkBoxSettingsFadeOut.Checked = false;
         }
     }
 }
