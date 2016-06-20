@@ -433,8 +433,9 @@
             // 
             this.textBoxVideoNumber.Location = new System.Drawing.Point(63, 49);
             this.textBoxVideoNumber.Name = "textBoxVideoNumber";
-            this.textBoxVideoNumber.Size = new System.Drawing.Size(155, 20);
+            this.textBoxVideoNumber.Size = new System.Drawing.Size(74, 20);
             this.textBoxVideoNumber.TabIndex = 26;
+            this.textBoxVideoNumber.Text = "1";
             this.textBoxVideoNumber.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxVideoNumber_KeyPress);
             // 
             // label4

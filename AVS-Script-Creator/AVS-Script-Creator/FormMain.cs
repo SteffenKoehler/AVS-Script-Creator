@@ -240,7 +240,7 @@ namespace AVS_Script_Creator
             foreach (ListViewItem itemRow in listViewQueue.Items)
             {
                 Filesave fileSave = new Filesave();
-                fileSave.number = itemRow.Index + 1;
+                fileSave.number = itemRow.Index + Convert.ToInt32(textBoxVideoNumber.Text.ToString());
                 fileSave.videoInput = itemRow.SubItems[0].Text.ToString();
                 fileSave.trim = itemRow.SubItems[1].Text.ToString();
                 fileSave.resize = itemRow.SubItems[2].Text.ToString();
