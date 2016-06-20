@@ -141,7 +141,7 @@
             this.checkBoxTrim.Location = new System.Drawing.Point(63, 89);
             this.checkBoxTrim.Name = "checkBoxTrim";
             this.checkBoxTrim.Size = new System.Drawing.Size(15, 14);
-            this.checkBoxTrim.TabIndex = 1;
+            this.checkBoxTrim.TabIndex = 2;
             this.checkBoxTrim.UseVisualStyleBackColor = true;
             // 
             // numericUpDownTrimEnd
@@ -154,7 +154,7 @@
             0});
             this.numericUpDownTrimEnd.Name = "numericUpDownTrimEnd";
             this.numericUpDownTrimEnd.Size = new System.Drawing.Size(120, 20);
-            this.numericUpDownTrimEnd.TabIndex = 3;
+            this.numericUpDownTrimEnd.TabIndex = 4;
             // 
             // numericUpDownTrimStart
             // 
@@ -166,14 +166,14 @@
             0});
             this.numericUpDownTrimStart.Name = "numericUpDownTrimStart";
             this.numericUpDownTrimStart.Size = new System.Drawing.Size(120, 20);
-            this.numericUpDownTrimStart.TabIndex = 2;
+            this.numericUpDownTrimStart.TabIndex = 3;
             // 
             // comboBoxResize
             // 
             this.comboBoxResize.Location = new System.Drawing.Point(98, 160);
             this.comboBoxResize.Name = "comboBoxResize";
             this.comboBoxResize.Size = new System.Drawing.Size(267, 21);
-            this.comboBoxResize.TabIndex = 5;
+            this.comboBoxResize.TabIndex = 6;
             // 
             // labelResize
             // 
@@ -190,7 +190,7 @@
             this.checkBoxResize.Location = new System.Drawing.Point(63, 163);
             this.checkBoxResize.Name = "checkBoxResize";
             this.checkBoxResize.Size = new System.Drawing.Size(15, 14);
-            this.checkBoxResize.TabIndex = 4;
+            this.checkBoxResize.TabIndex = 5;
             this.checkBoxResize.UseVisualStyleBackColor = true;
             // 
             // windowsMediaPlayer
@@ -297,7 +297,7 @@
             this.checkBoxFadeInOut.Location = new System.Drawing.Point(351, 208);
             this.checkBoxFadeInOut.Name = "checkBoxFadeInOut";
             this.checkBoxFadeInOut.Size = new System.Drawing.Size(15, 14);
-            this.checkBoxFadeInOut.TabIndex = 8;
+            this.checkBoxFadeInOut.TabIndex = 9;
             this.checkBoxFadeInOut.UseVisualStyleBackColor = true;
             // 
             // labelFadeINOUT
@@ -315,7 +315,7 @@
             this.checkBoxFadeOut.Location = new System.Drawing.Point(201, 207);
             this.checkBoxFadeOut.Name = "checkBoxFadeOut";
             this.checkBoxFadeOut.Size = new System.Drawing.Size(15, 14);
-            this.checkBoxFadeOut.TabIndex = 7;
+            this.checkBoxFadeOut.TabIndex = 8;
             this.checkBoxFadeOut.UseVisualStyleBackColor = true;
             // 
             // labelFadeOUT
@@ -333,7 +333,7 @@
             this.checkBoxFadeIn.Location = new System.Drawing.Point(63, 207);
             this.checkBoxFadeIn.Name = "checkBoxFadeIn";
             this.checkBoxFadeIn.Size = new System.Drawing.Size(15, 14);
-            this.checkBoxFadeIn.TabIndex = 6;
+            this.checkBoxFadeIn.TabIndex = 7;
             this.checkBoxFadeIn.UseVisualStyleBackColor = true;
             // 
             // label2
@@ -434,7 +434,7 @@
             this.textBoxVideoNumber.Location = new System.Drawing.Point(63, 49);
             this.textBoxVideoNumber.Name = "textBoxVideoNumber";
             this.textBoxVideoNumber.Size = new System.Drawing.Size(74, 20);
-            this.textBoxVideoNumber.TabIndex = 26;
+            this.textBoxVideoNumber.TabIndex = 1;
             this.textBoxVideoNumber.Text = "1";
             this.textBoxVideoNumber.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxVideoNumber_KeyPress);
             // 
