@@ -43,10 +43,9 @@
             // 
             // buttonCancel
             // 
-            this.buttonCancel.Location = new System.Drawing.Point(22, 348);
-            this.buttonCancel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.buttonCancel.Location = new System.Drawing.Point(15, 226);
             this.buttonCancel.Name = "buttonCancel";
-            this.buttonCancel.Size = new System.Drawing.Size(112, 35);
+            this.buttonCancel.Size = new System.Drawing.Size(75, 23);
             this.buttonCancel.TabIndex = 0;
             this.buttonCancel.Text = "Cancel";
             this.buttonCancel.UseVisualStyleBackColor = true;
@@ -54,10 +53,9 @@
             // 
             // buttonSave
             // 
-            this.buttonSave.Location = new System.Drawing.Point(586, 348);
-            this.buttonSave.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.buttonSave.Location = new System.Drawing.Point(391, 226);
             this.buttonSave.Name = "buttonSave";
-            this.buttonSave.Size = new System.Drawing.Size(112, 35);
+            this.buttonSave.Size = new System.Drawing.Size(75, 23);
             this.buttonSave.TabIndex = 1;
             this.buttonSave.Text = "Save";
             this.buttonSave.UseVisualStyleBackColor = true;
@@ -66,27 +64,24 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(18, 25);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(12, 16);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(168, 20);
+            this.label1.Size = new System.Drawing.Size(114, 13);
             this.label1.TabIndex = 2;
             this.label1.Text = "Set default video path:\r\n";
             // 
             // textBoxVideoDefaultPath
             // 
-            this.textBoxVideoDefaultPath.Location = new System.Drawing.Point(198, 20);
-            this.textBoxVideoDefaultPath.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.textBoxVideoDefaultPath.Location = new System.Drawing.Point(132, 13);
             this.textBoxVideoDefaultPath.Name = "textBoxVideoDefaultPath";
-            this.textBoxVideoDefaultPath.Size = new System.Drawing.Size(452, 26);
+            this.textBoxVideoDefaultPath.Size = new System.Drawing.Size(303, 20);
             this.textBoxVideoDefaultPath.TabIndex = 3;
             // 
             // buttonDefaultVideoDirection
             // 
-            this.buttonDefaultVideoDirection.Location = new System.Drawing.Point(662, 18);
-            this.buttonDefaultVideoDirection.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.buttonDefaultVideoDirection.Location = new System.Drawing.Point(441, 12);
             this.buttonDefaultVideoDirection.Name = "buttonDefaultVideoDirection";
-            this.buttonDefaultVideoDirection.Size = new System.Drawing.Size(38, 35);
+            this.buttonDefaultVideoDirection.Size = new System.Drawing.Size(25, 23);
             this.buttonDefaultVideoDirection.TabIndex = 4;
             this.buttonDefaultVideoDirection.Text = "...";
             this.buttonDefaultVideoDirection.UseVisualStyleBackColor = true;
@@ -94,10 +89,9 @@
             // 
             // buttonAVSOutput
             // 
-            this.buttonAVSOutput.Location = new System.Drawing.Point(662, 77);
-            this.buttonAVSOutput.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.buttonAVSOutput.Location = new System.Drawing.Point(441, 50);
             this.buttonAVSOutput.Name = "buttonAVSOutput";
-            this.buttonAVSOutput.Size = new System.Drawing.Size(38, 35);
+            this.buttonAVSOutput.Size = new System.Drawing.Size(25, 23);
             this.buttonAVSOutput.TabIndex = 5;
             this.buttonAVSOutput.Text = "...";
             this.buttonAVSOutput.UseVisualStyleBackColor = true;
@@ -105,55 +99,54 @@
             // 
             // textBoxAVSOutput
             // 
-            this.textBoxAVSOutput.Location = new System.Drawing.Point(198, 80);
-            this.textBoxAVSOutput.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.textBoxAVSOutput.Location = new System.Drawing.Point(132, 52);
             this.textBoxAVSOutput.Name = "textBoxAVSOutput";
-            this.textBoxAVSOutput.Size = new System.Drawing.Size(452, 26);
+            this.textBoxAVSOutput.Size = new System.Drawing.Size(303, 20);
             this.textBoxAVSOutput.TabIndex = 6;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(18, 85);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(12, 55);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(178, 20);
+            this.label2.Size = new System.Drawing.Size(118, 13);
             this.label2.TabIndex = 7;
             this.label2.Text = "Set default AVS output:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(18, 127);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(12, 83);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(137, 20);
+            this.label3.Size = new System.Drawing.Size(91, 13);
             this.label3.TabIndex = 8;
             this.label3.Text = "Set default resize:";
             // 
             // checkBoxSettingsResize
             // 
             this.checkBoxSettingsResize.AutoSize = true;
-            this.checkBoxSettingsResize.Location = new System.Drawing.Point(198, 127);
+            this.checkBoxSettingsResize.Location = new System.Drawing.Point(132, 83);
+            this.checkBoxSettingsResize.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.checkBoxSettingsResize.Name = "checkBoxSettingsResize";
-            this.checkBoxSettingsResize.Size = new System.Drawing.Size(131, 24);
+            this.checkBoxSettingsResize.Size = new System.Drawing.Size(89, 17);
             this.checkBoxSettingsResize.TabIndex = 9;
-            this.checkBoxSettingsResize.Text = "Enalbe resize";
+            this.checkBoxSettingsResize.Text = "Enable resize";
             this.checkBoxSettingsResize.UseVisualStyleBackColor = true;
             // 
             // comboBoxSettingsResize
             // 
             this.comboBoxSettingsResize.FormattingEnabled = true;
-            this.comboBoxSettingsResize.Location = new System.Drawing.Point(364, 124);
+            this.comboBoxSettingsResize.Location = new System.Drawing.Point(243, 81);
+            this.comboBoxSettingsResize.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.comboBoxSettingsResize.Name = "comboBoxSettingsResize";
-            this.comboBoxSettingsResize.Size = new System.Drawing.Size(286, 28);
+            this.comboBoxSettingsResize.Size = new System.Drawing.Size(192, 21);
             this.comboBoxSettingsResize.TabIndex = 10;
             // 
             // FormSettings
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(717, 402);
+            this.ClientSize = new System.Drawing.Size(478, 261);
             this.Controls.Add(this.comboBoxSettingsResize);
             this.Controls.Add(this.checkBoxSettingsResize);
             this.Controls.Add(this.label3);
@@ -166,7 +159,6 @@
             this.Controls.Add(this.buttonSave);
             this.Controls.Add(this.buttonCancel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FormSettings";
