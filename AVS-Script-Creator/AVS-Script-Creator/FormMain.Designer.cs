@@ -47,6 +47,9 @@
             this.buttonTrimAddEndFrame = new System.Windows.Forms.Button();
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.textBoxVideoNumber = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.buttonClear = new System.Windows.Forms.Button();
             this.buttonAddToQueue = new System.Windows.Forms.Button();
             this.checkBoxFadeInOut = new System.Windows.Forms.CheckBox();
@@ -55,6 +58,9 @@
             this.labelFadeOUT = new System.Windows.Forms.Label();
             this.checkBoxFadeIn = new System.Windows.Forms.CheckBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.buttonCreateFiles = new System.Windows.Forms.Button();
             this.listViewQueue = new System.Windows.Forms.ListView();
@@ -63,12 +69,8 @@
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.label7 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.textBoxVideoNumber = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.buttonClearList = new System.Windows.Forms.Button();
+            this.buttonDeleteElement = new System.Windows.Forms.Button();
             this.menuStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownTrimEnd)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownTrimStart)).BeginInit();
@@ -265,11 +267,39 @@
             this.tabPage1.Controls.Add(this.label6);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage1.Size = new System.Drawing.Size(915, 428);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "tabPage1";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // textBoxVideoNumber
+            // 
+            this.textBoxVideoNumber.Location = new System.Drawing.Point(63, 49);
+            this.textBoxVideoNumber.Name = "textBoxVideoNumber";
+            this.textBoxVideoNumber.Size = new System.Drawing.Size(74, 20);
+            this.textBoxVideoNumber.TabIndex = 1;
+            this.textBoxVideoNumber.Text = "1";
+            this.textBoxVideoNumber.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxVideoNumber_KeyPress);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(9, 52);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(48, 13);
+            this.label3.TabIndex = 25;
+            this.label3.Text = "VideoNr:";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(3, 65);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(364, 13);
+            this.label7.TabIndex = 24;
+            this.label7.Text = "................................................................................." +
+    "......................................";
             // 
             // buttonClear
             // 
@@ -345,13 +375,45 @@
             this.label2.TabIndex = 16;
             this.label2.Text = "FadeIN:";
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(3, 139);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(364, 13);
+            this.label4.TabIndex = 27;
+            this.label4.Text = "................................................................................." +
+    "......................................";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(3, 181);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(364, 13);
+            this.label5.TabIndex = 28;
+            this.label5.Text = "................................................................................." +
+    "......................................";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(3, 223);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(364, 13);
+            this.label6.TabIndex = 29;
+            this.label6.Text = "................................................................................." +
+    "......................................";
+            // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.buttonDeleteElement);
+            this.tabPage2.Controls.Add(this.buttonClearList);
             this.tabPage2.Controls.Add(this.buttonCreateFiles);
             this.tabPage2.Controls.Add(this.listViewQueue);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage2.Size = new System.Drawing.Size(915, 428);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "tabPage2";
@@ -359,9 +421,9 @@
             // 
             // buttonCreateFiles
             // 
-            this.buttonCreateFiles.Location = new System.Drawing.Point(677, 382);
+            this.buttonCreateFiles.Location = new System.Drawing.Point(750, 375);
             this.buttonCreateFiles.Name = "buttonCreateFiles";
-            this.buttonCreateFiles.Size = new System.Drawing.Size(75, 23);
+            this.buttonCreateFiles.Size = new System.Drawing.Size(125, 40);
             this.buttonCreateFiles.TabIndex = 1;
             this.buttonCreateFiles.Text = "Create files";
             this.buttonCreateFiles.UseVisualStyleBackColor = true;
@@ -378,7 +440,6 @@
             this.listViewQueue.FullRowSelect = true;
             this.listViewQueue.GridLines = true;
             this.listViewQueue.Location = new System.Drawing.Point(6, 6);
-            this.listViewQueue.MultiSelect = false;
             this.listViewQueue.Name = "listViewQueue";
             this.listViewQueue.Size = new System.Drawing.Size(903, 354);
             this.listViewQueue.TabIndex = 0;
@@ -410,63 +471,25 @@
             this.columnHeader5.Text = "Output";
             this.columnHeader5.Width = 286;
             // 
-            // label7
+            // buttonClearList
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(3, 65);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(364, 13);
-            this.label7.TabIndex = 24;
-            this.label7.Text = "................................................................................." +
-    "......................................";
+            this.buttonClearList.Location = new System.Drawing.Point(6, 375);
+            this.buttonClearList.Name = "buttonClearList";
+            this.buttonClearList.Size = new System.Drawing.Size(125, 40);
+            this.buttonClearList.TabIndex = 2;
+            this.buttonClearList.Text = "Clear list";
+            this.buttonClearList.UseVisualStyleBackColor = true;
+            this.buttonClearList.Click += new System.EventHandler(this.buttonClearList_Click);
             // 
-            // label3
+            // buttonDeleteElement
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(9, 52);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(48, 13);
-            this.label3.TabIndex = 25;
-            this.label3.Text = "VideoNr:";
-            // 
-            // textBoxVideoNumber
-            // 
-            this.textBoxVideoNumber.Location = new System.Drawing.Point(63, 49);
-            this.textBoxVideoNumber.Name = "textBoxVideoNumber";
-            this.textBoxVideoNumber.Size = new System.Drawing.Size(74, 20);
-            this.textBoxVideoNumber.TabIndex = 1;
-            this.textBoxVideoNumber.Text = "1";
-            this.textBoxVideoNumber.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxVideoNumber_KeyPress);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(3, 139);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(364, 13);
-            this.label4.TabIndex = 27;
-            this.label4.Text = "................................................................................." +
-    "......................................";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(3, 181);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(364, 13);
-            this.label5.TabIndex = 28;
-            this.label5.Text = "................................................................................." +
-    "......................................";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(3, 223);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(364, 13);
-            this.label6.TabIndex = 29;
-            this.label6.Text = "................................................................................." +
-    "......................................";
+            this.buttonDeleteElement.Location = new System.Drawing.Point(165, 375);
+            this.buttonDeleteElement.Name = "buttonDeleteElement";
+            this.buttonDeleteElement.Size = new System.Drawing.Size(125, 40);
+            this.buttonDeleteElement.TabIndex = 3;
+            this.buttonDeleteElement.Text = "Delete element";
+            this.buttonDeleteElement.UseVisualStyleBackColor = true;
+            this.buttonDeleteElement.Click += new System.EventHandler(this.buttonDeleteElement_Click);
             // 
             // formMain
             // 
@@ -535,6 +558,8 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button buttonDeleteElement;
+        private System.Windows.Forms.Button buttonClearList;
     }
 }
 

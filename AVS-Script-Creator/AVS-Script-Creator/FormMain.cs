@@ -293,5 +293,18 @@ namespace AVS_Script_Creator
                 e.Handled = true;
             }
         }
+
+        private void buttonClearList_Click(object sender, EventArgs e)
+        {
+            listViewQueue.Items.Clear();
+        }
+
+        private void buttonDeleteElement_Click(object sender, EventArgs e)
+        {
+            foreach (ListViewItem eachItem in listViewQueue.SelectedItems)
+            {
+                listViewQueue.Items.Remove(eachItem);
+            }
+        }
     }
 }
