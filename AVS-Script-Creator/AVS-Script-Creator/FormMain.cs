@@ -237,17 +237,28 @@ namespace AVS_Script_Creator
 
         private void buttonCreateFiles_Click(object sender, EventArgs e)
         {
+
+            int counter = 0;
             foreach (ListViewItem itemRow in listViewQueue.Items)
             {
                 Filesave fileSave = new Filesave();
-                fileSave.number = itemRow.Index + Convert.ToInt32(textBoxVideoNumber.Text.ToString());
+                fileSave.number = counter + Convert.ToInt32(textBoxVideoNumber.Text.ToString());
                 fileSave.videoInput = itemRow.SubItems[0].Text.ToString();
                 fileSave.trim = itemRow.SubItems[1].Text.ToString();
                 fileSave.resize = itemRow.SubItems[2].Text.ToString();
                 fileSave.fade = itemRow.SubItems[3].Text.ToString();
-                
-                fileSave.save(); 
 
+                counter++;
+
+                if (fileSave.save())
+                {
+                    listViewQueue.Items.Remove(itemRow);
+                    tabPage2.Text = "Queue (" + listViewQueue.Items.Count + ")";
+                } else
+                {
+                    MessageBox.Show("The Video " + fileSave.videoInput + " " + fileSave.number + " wasn't saved \n" + 
+                                    "There could be another file with this name!");
+                }
                 
             }
         }
@@ -297,6 +308,8 @@ namespace AVS_Script_Creator
         private void buttonClearList_Click(object sender, EventArgs e)
         {
             listViewQueue.Items.Clear();
+            tabPage2.Text = "Queue (" + listViewQueue.Items.Count + ")";
+
         }
 
         private void buttonDeleteElement_Click(object sender, EventArgs e)
@@ -304,6 +317,7 @@ namespace AVS_Script_Creator
             foreach (ListViewItem eachItem in listViewQueue.SelectedItems)
             {
                 listViewQueue.Items.Remove(eachItem);
+                tabPage2.Text = "Queue (" + listViewQueue.Items.Count + ")";
             }
         }
     }

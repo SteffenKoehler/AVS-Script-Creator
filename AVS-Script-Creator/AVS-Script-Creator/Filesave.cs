@@ -23,7 +23,7 @@ namespace AVS_Script_Creator
         private string pluginSplineResize = "LoadPlugin(" + separator + "E:\\Software\\SagaraS Scriptmaker\\Plugins\\SplineResize.dll" + separator + ")";
 
 
-        public void save()
+        public Boolean save()
         {
            
             if (!File.Exists(getSavePathSettings()))
@@ -40,9 +40,12 @@ namespace AVS_Script_Creator
                     sw.WriteLine("clip = Trim(clip," + trim + ")");
                     sw.WriteLine(getResizeSettings());
                     sw.WriteLine(getFadeSettings());
-                    
+
+                    return true;
                 }
             }
+
+            return false;
         }
 
 
