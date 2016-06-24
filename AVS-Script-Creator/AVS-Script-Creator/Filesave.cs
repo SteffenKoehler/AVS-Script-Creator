@@ -40,8 +40,7 @@ namespace AVS_Script_Creator
                     sw.WriteLine("clip = Trim(clip," + trim + ")");
                     sw.WriteLine(getResizeSettings());
                     sw.WriteLine(getFadeSettings());
-                    sw.WriteLine("clip");
-
+                    
                 }
             }
         }
