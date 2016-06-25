@@ -40,8 +40,10 @@ namespace AVS_Script_Creator
             //Set EventHandler for numericUpDown fields
             numericUpDownTrimStart.Enter += new EventHandler(numericUpDownTrimStart_Enter);
             numericUpDownTrimStart.Leave += new EventHandler(numericUpDownTrimStart_Leave);
+            numericUpDownTrimStart.ValueChanged += new EventHandler(numericUpDownTrimStart_ValueChanged);
             numericUpDownTrimEnd.Enter += new EventHandler(numericUpDownTrimEnd_Enter);
             numericUpDownTrimEnd.Leave += new EventHandler(numericUpDownTrimEnd_Leave);
+            numericUpDownTrimEnd.ValueChanged += new EventHandler(numericUpDownTrimEnd_ValueChanged);
         }
 
 
@@ -279,6 +281,11 @@ namespace AVS_Script_Creator
             }
         }
 
+        private void numericUpDownTrimStart_ValueChanged(object sender, EventArgs e)
+        {
+            checkBoxTrim.Checked = true;
+        }
+
         private void numericUpDownTrimEnd_Enter(object sender, EventArgs e)
         {
             if (numericUpDownTrimEnd.Value == 0)
@@ -293,6 +300,11 @@ namespace AVS_Script_Creator
             {
                 numericUpDownTrimEnd.Text = "0";
             }
+        }
+
+        private void numericUpDownTrimEnd_ValueChanged(object sender, EventArgs e)
+        {
+            checkBoxTrim.Checked = true;
         }
 
         private void textBoxVideoNumber_KeyPress(object sender, KeyPressEventArgs e)
