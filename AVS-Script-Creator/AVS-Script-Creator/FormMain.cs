@@ -246,6 +246,7 @@ namespace AVS_Script_Creator
                 Filesave fileSave = new Filesave();
                 fileSave.number = counter + Convert.ToInt32(textBoxVideoNumber.Text.ToString());
                 fileSave.videoInput = itemRow.SubItems[0].Text.ToString();
+                fileSave.frameRate = (Convert.ToInt32(windowsMediaPlayer.currentMedia.getItemInfoByAtom(398)) / 1000);
                 fileSave.trim = itemRow.SubItems[1].Text.ToString();
                 fileSave.resize = itemRow.SubItems[2].Text.ToString();
                 fileSave.fade = itemRow.SubItems[3].Text.ToString();

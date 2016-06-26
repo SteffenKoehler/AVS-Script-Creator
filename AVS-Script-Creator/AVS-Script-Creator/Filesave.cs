@@ -15,12 +15,14 @@ namespace AVS_Script_Creator
         public string trim { get; set; }
         public string resize { get; set; }
         public string fade { get; set; }
+        public int frameRate { get; set; }
 
         private string outputPathAVS = Properties.Settings.Default.AVSOutput.ToString();
         private static char separator = '"';
         private string credits = "#Created with AVS-Script-Creator by Steffen Köhler";
         private string pluginTransAll = "LoadPlugin(" + separator + "E:\\Software\\AviSynth 2.5\\plugins\\TransAll.dll" + separator + ")";
         private string pluginSplineResize = "LoadPlugin(" + separator + "E:\\Software\\SagaraS Scriptmaker\\Plugins\\SplineResize.dll" + separator + ")";
+       
 
 
         public Boolean save()
@@ -35,7 +37,7 @@ namespace AVS_Script_Creator
                     sw.WriteLine(credits);
                     sw.WriteLine(pluginTransAll);
                     sw.WriteLine(pluginSplineResize);
-                    sw.WriteLine("clip = AVISource(" + separator + videoInput + separator + ", audio = false).AssumeFPS(30, 1).ConvertToYV12()");
+                    sw.WriteLine("clip = AVISource(" + separator + videoInput + separator + ", audio = false).AssumeFPS("+ frameRate + ", 1).ConvertToYV12()");
                     sw.WriteLine("clip = AudioDub(clip, WAVSource(" + separator + videoInput.Replace(".avi", ".wav") + separator + "))");
                     sw.WriteLine("clip = Trim(clip," + trim + ")");
                     sw.WriteLine(getResizeSettings());
